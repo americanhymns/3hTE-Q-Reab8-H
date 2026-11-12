@@ -44,7 +44,7 @@ document.write('<style>html,body{margin:0;height:100%;background:#000;overflow:h
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC70lEQVR42u2WTWhTaRSGn+/e/Nz82NQmxQxWrIxW1I4gLhQpggvFCY6CCxfqIC1lRlwLigs3rgRnOYMoZqFYUESRQqFOpYMbpUyp4h/Woha1qLlN2zTJzU3u/T4XaoYa1FqtHaRn+RwuvN/hPe+5IpHYqpjB0pjhmhUwK8DzPti7rZbF8/1kLcnRthcc2BknHNAYeG5z/HJq+idw9u80AOe701i25Hx3egKf9gl8rA7tjhMJ6/xx7iWtW2J09mRYtSRIfdxHatShttrDvScFli00ePjMxucVE3on200GXxYn54GWRIxj++poScTK7NqtLON5SWrU4eZDi77+PH39eZSCE+0mjgtDZomu3nGW1PnLvZPtJnZRUR/3T96EyQ6T/X89I9lhlllvf56QodG4KEChKJFvM1QpsGyJZUtKrmIs5yLEf728LckVZJlNeQssW3JzIM/29dXceWxNjwl3bawBYMeGGgJ+jR0baibwG3dzDGdcXo04AKxqCBI0NJp+ChOLeFi9NEhjvYHh02haGSZoaKxdHiIe9bJ6abBCgPicY+T3Cup/8BMJ6fTcz337LWjd8saQxy+bM7OGf15KfX9R/P+7Be/fBIBCUdL/1KatK43jftqzv/0So67Wx+Hk0NQn8C77kx0mbV1pVv4YYGHcN6lX9T7If10TCgSOq0iNOlSHdZp/jhGN6FztHae7b7yCZXJu+duDu+IMPLe58M/I1DzQkojRnIhyf7BAsaRY1xjGKkrOXEmzeU0VXo+oYLr+JnMjIZ3bjywuXhuZugmTHSaHTw0xb66XbU0RqkI6o1kXc8xB1wRzgnoFM3wCjy74fWstmgApv2ALBAJXKoQAn1djLOtSHdaJRTy4UpG13ApWKCpcqTjdOczaFWEaFhifL+Bd9jcnohxpnU/JUXT9m+H63SwhQ+PXTTV09mQollQFa1wUIODXqArp6Brs2Rz98AM/dgsEoGkCpVT59H7TPyIFuFJ930k4K2BWwGu/+zu0KjGjPgAAAABJRU5ErkJggg==">
 <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
 <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
-<title>Hymn Book · v1.64</title>
+<title>Hymn Book · v1.67</title>
 <style>
 :root{
   --bg:#0f0f10; --surface:#1b1b1d; --surface2:#242427; --page:#17171a; --text:#e9e6df; --muted:#9a968e;
@@ -81,7 +81,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #searchWrap{flex:1;display:flex;align-items:center;background:var(--surface2);border-radius:24px;padding:0 6px 0 14px;height:44px;min-width:0}
 #searchWrap svg{width:20px;height:20px;fill:var(--muted);flex:none}
 #q{flex:1;min-width:0;border:0;outline:0;background:none;color:var(--text);font-size:16px;padding:0 8px;height:100%}
-#q::placeholder{color:var(--muted)}
+#q::placeholder{color:var(--muted);font-size:var(--ph-size,16px)}
 #clearQ{width:34px;height:34px;display:none}
 #clearQ.show{display:flex}
 /* filter chip */
@@ -112,7 +112,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .pg .hn{font-weight:700;font-size:1.45em;margin-right:.18em}
 .pg .old{font-size:.62em;vertical-align:super;margin-right:.35em;color:var(--muted)}
 .pg .dc{font-weight:700;font-size:1.3em;line-height:1}
-.pg .v{margin:.38em 0;text-align:left;hyphens:manual}
+.pg .v{margin:.38em 0;text-align:left;hyphens:manual;transition:background-color .9s ease-in-out,color .9s ease-in-out,box-shadow .9s ease-in-out}
+.pg .v.melodyNow{background:rgba(255,238,166,.28);color:inherit;box-shadow:0 0 0 .24em rgba(255,238,166,.16);border-radius:5px}
+body.light .pg .v.melodyNow{background:rgba(255,220,86,.22);box-shadow:0 0 0 .24em rgba(255,220,86,.12)}
+@media (prefers-reduced-motion:reduce){.pg .v{transition:none}}
 .pg .v .vn{font-weight:400}
 .pg .meta{text-align:right;font-style:italic;font-size:.78em;line-height:1.35;color:var(--muted)}
 .pg .meta.first{margin-top:.2em}
@@ -326,7 +329,8 @@ body.light .pl-words .pw.on{background:#f3d98c}
 #scrollBtn{flex:none;height:32px;padding:0 10px;border-radius:16px;border:1px solid var(--line);background:var(--surface2);color:var(--text);font:600 12.5px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;cursor:pointer;white-space:nowrap}
 #scrollBtn:hover{border-color:var(--muted)}
 #scrollBtn.on{background:#f5c518;border-color:#f5c518;color:#1a1a1a}
-@media (max-width:440px){#scrollBtn{padding:0 7px;font-size:11.5px}#bar{padding-left:6px;padding-right:6px;gap:2px}#tocBtn,#setBtn{width:40px;height:40px}#searchWrap{padding-left:11px}}
+@media (max-width:440px){#scrollBtn{padding:0 7px;font-size:11.5px}#bar{padding-left:6px;padding-right:6px;gap:2px}#tocBtn,#fullBtn,#themeBtn,#setBtn{width:40px;height:40px}#searchWrap{padding-left:9px}#searchWrap>svg{display:none}}
+@media (max-width:360px){#scrollBtn{width:34px;padding:0;font-size:0}#scrollBtn::after{content:"↕";font-size:18px;line-height:1}#fullBtn,#themeBtn,#setBtn{width:36px;height:36px}}
 @media (max-width:340px){#searchWrap>svg{display:none}#searchWrap{padding-left:12px}}
 body.noscrollbtn #scrollBtn{display:none}
 body.noscrollbtn #fsbar{display:none!important}
@@ -707,6 +711,9 @@ body.black #dlDlg{border:1px solid var(--line)}
 #recNote .recDisc{display:block;margin-top:5px;font-size:11px;font-style:italic;opacity:.72}
 .recDiscS{display:block;margin-top:3px;font-style:italic;opacity:.8}
 /* v1.64: a general revision flag on the title page, plus a clickable grey melody offer when only a recording exists. */
+/* v1.65: the verse/section currently sung by embedded melody playback is highlighted in light yellow. */
+/* v1.66: the first text-search jump explains that search is a time-saver, and the playback highlight is gentler. */
+/* v1.67: deliberate navigation jumps immediately without playback auto-scroll fighting it; the header adds a compact theme switcher. */
 .playBtn.off.hasRecording{cursor:pointer}
 .titleGeneralFlagWrap{position:absolute;left:0;right:0;top:calc(50% + 4.5em);display:flex;justify-content:center;padding:0 16px;z-index:2}
 .titleGeneralFlagWrap .flagBtn{font-size:13px;min-height:36px;padding:6px 12px;background:var(--surface)}
@@ -1142,11 +1149,12 @@ body.black #dlDlg{border:1px solid var(--line)}
   <button class="icon-btn" id="tocBtn" aria-label="Table of contents"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
   <div id="searchWrap">
     <svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 9.5 16a6.5 6.5 0 0 0 4.2-1.6l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
-    <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Hymn #, page #, old #, or words…" aria-label="Search">
+    <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Search number or words…" aria-label="Search">
     <button class="icon-btn" id="clearQ" aria-label="Clear"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button>
   </div>
   <button type="button" id="scrollBtn" aria-pressed="false" title="Scroll through the whole book instead of flipping pages">Scroll</button>
   <button class="icon-btn" id="fullBtn" aria-label="Enter full screen" title="Full screen"><svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg></button>
+  <button class="icon-btn" id="themeBtn" aria-label="Switch theme" title="Switch theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20V2zm-2 17.7A8 8 0 0 1 10 4.3v15.4z"/></svg></button>
   <button class="icon-btn" id="setBtn" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.5 7.5 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.5 7.5 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.6 7.6 0 0 0 1.7 1l.4 2.6h4l.4-2.6a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.5zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z" transform="translate(-1 0)"/></svg></button>
 </header>
 
@@ -1170,7 +1178,7 @@ body.black #dlDlg{border:1px solid var(--line)}
 
 <section id="settings" aria-label="Settings">
   <div class="grab"></div>
-  <div class="dh sdh" style="border:0"><h2>Settings <small style="font-size:11px;color:var(--muted);font-weight:400">v1.64 · 11.12.2026</small></h2><button class="icon-btn" id="setClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button></div>
+  <div class="dh sdh" style="border:0"><h2>Settings <small style="font-size:11px;color:var(--muted);font-weight:400">v1.67 · 11.12.2026</small></h2><button class="icon-btn" id="setClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button></div>
   <div class="srow rng"><div class="sl">Font size <small id="fsVal"></small></div>
     <div class="fsrow"><span class="a" style="font-size:13px">A</span><input type="range" id="fs" aria-label="Font size" min="13" max="34" step="1"><span class="a" style="font-size:24px">A</span><button type="button" class="miniReset" id="resetText" title="Reset font size and line spacing">Default</button></div></div>
   <div class="srow rng"><div class="sl">Line spacing <small id="lhVal"></small></div>
@@ -1266,8 +1274,9 @@ const PAGES=BOOK.pages, HYMNS=BOOK.hymns, TOC=BOOK.toc;
 const hymnPage={}; HYMNS.forEach(h=>hymnPage[h.n]=h.p);
 const oldToNew={}; PAGES.forEach(p=>p.b.forEach(b=>{if(b.k==="hy"&&b.o&&oldToNew[b.o]==null)oldToNew[b.o]=b.n}));
 const THEMES=["black","dark","light"];
+const SEARCH_NOTICE_REV="1.67";
 const THEME_COLOR={black:"#000000",dark:"#1b1b1d",light:"#ffffff"};
-const DEF={theme:"black",fs:18,lh:1.55,font:"serif",old:true,wake:true,mel:true,melU:true,melNotes:false,melSound:"organ",melSpeed:100,melVol:80,melBreath:"natural",melKey:0,melAll:true,melIntro:false,melSizeLinked:true,melFs:18,melSpeeds:{},hideC:false,hideU:false,hideN:false,scroll:false,scrollBtn:true,idxSearch:false,showOld:false,offline:false,recCertain:false,recUncertain:false,devFlags:false};
+const DEF={theme:"black",fs:18,lh:1.55,font:"serif",old:true,wake:true,mel:true,melU:true,melNotes:false,melSound:"organ",melSpeed:100,melVol:80,melBreath:"natural",melKey:0,melAll:true,melIntro:false,melSizeLinked:true,melFs:18,melSpeeds:{},hideC:false,hideU:false,hideN:false,scroll:false,scrollBtn:true,idxSearch:false,showOld:false,offline:false,recCertain:false,recUncertain:false,devFlags:false,searchPurposeNoticeShown:false,searchPurposeNoticeRevision:""};
 let S=Object.assign({},DEF,{melSpeeds:{}});
 try{Object.assign(S,JSON.parse(localStorage.getItem("hbs.settings")||"{}"))}catch(e){}
 Object.keys(S).forEach(k=>{if(!(k in DEF))delete S[k]});   /* drop settings no longer used by the app */
@@ -1359,6 +1368,7 @@ function hl(html){
 }
 
 /* ---------- render ---------- */
+function melBodyAttrs(b,all){const n=+b._o||0;if(!n)return"";return ` data-hymn="${n}"${all?' data-verse-all="1"':(b._hv>=0?` data-verse="${b._hv}"`:"")}`}
 function renderBlocks(p,flow){
   let h="",skip=false;
   /* a page can start with the rest of a hymn that began on the previous page */
@@ -1375,14 +1385,14 @@ function renderBlocks(p,flow){
       case "s3":h+=secHead("sec3",t,b);break;
       case "hy":{if(mfHidden(b.n)){skip=true;h+=`<div class="hyHide" data-n="${b.n}"><span>Hymn ${b.n} is hidden by the melody filter</span><button type="button" class="hyShow" data-n="${b.n}">Show</button></div>`;break}
         const first=t.charAt(0),rest=t.slice(1);
-        const lead=hlTerms.length?esc(t):`<span class="dc">${esc(first)}</span>${esc(rest)}`;h+=hyBar(b.n)+`<p class="hy v" id="h${b.n}"><span class="hn">${b.n}.</span>${(S.old&&b.o)?`<span class="old">(${esc(b.o)})</span>`:""}${lead}</p>`;break;}
-      case "v":h+=`<p class="v"><span class="vn">${b.n}.</span> ${esc(t)}</p>`;break;
+        const lead=hlTerms.length?esc(t):`<span class="dc">${esc(first)}</span>${esc(rest)}`;h+=hyBar(b.n)+`<p class="hy v" id="h${b.n}"${melBodyAttrs(b)}><span class="hn">${b.n}.</span>${(S.old&&b.o)?`<span class="old">(${esc(b.o)})</span>`:""}${lead}</p>`;break;}
+      case "v":h+=`<p class="v"${melBodyAttrs(b)}><span class="vn">${b.n}.</span> ${esc(t)}</p>`;break;
       case "oh":{const first=t.charAt(0),rest=t.slice(1);
         const lead=hlTerms.length?esc(t):`<span class="dc">${esc(first)}</span>${esc(rest)}`;
-        h+=oldBar(b.id)+`<p class="hy v" id="o${b.id}">${(S.old&&b.o)?`<span class="old">(${esc(b.o)})</span>`:""}${lead}</p>`;break}
-      case "ch":h+=`<p class="v chorus"><span class="vn" style="font-style:italic">Chorus:</span> ${esc(t)}</p>`;break;
+        h+=oldBar(b.id)+`<p class="hy v" id="o${b.id}"${melBodyAttrs(b)}>${(S.old&&b.o)?`<span class="old">(${esc(b.o)})</span>`:""}${lead}</p>`;break}
+      case "ch":h+=`<p class="v chorus"${melBodyAttrs(b,true)}><span class="vn" style="font-style:italic">Chorus:</span> ${esc(t)}</p>`;break;
       case "oldload":h+=oldLoadHtml();break;
-      case "vc":h+=`<p class="v">${esc(t)}</p>`;break;
+      case "vc":h+=`<p class="v"${melBodyAttrs(b)}>${esc(t)}</p>`;break;
       case "nums":h+=`<p class="p nums">${b.h.map(x=>`<a href="#" class="hl" data-h="${x}">${x}</a>`).join(" ")}</p>`;break;
       case "ln":h+=`<div class="ln${b.c?" "+b.c:""}">${esc(t)}</div>`;break;
       case "m":h+=`<div class="meta${b.f?" first":""}">${esc(t)}</div>`;break;
@@ -1422,6 +1432,7 @@ function show(i,dir,scrollToHymn){
     cur=i;const p=PAGES[i];
     if(REV.size)REV.forEach(n=>{if(!(p.hy||[]).includes(n))REV.delete(n)});
     card.innerHTML=hl(renderBlocks(p));
+    restoreMelodyBodyHighlight();
     $("#scroller").scrollTop=0;
     let did=false;
     if(scrollToHymn){   /* align the top of the hymn's play / favorite bar (not just its first line) with the top of the reading area */
@@ -1461,7 +1472,7 @@ function flashHit(root,terms,focus,noScroll){
     if(html!==p.innerHTML){p.innerHTML=html;p.setAttribute("data-tmpmark","1")}
   }
   p.classList.remove("searchTarget");void p.offsetWidth;p.classList.add("searchTarget");
-  if(!noScroll)setTimeout(()=>{try{p.scrollIntoView({block:"center",behavior:"smooth"})}catch(e){p.scrollIntoView()}},30);
+  if(!noScroll)setTimeout(()=>{const sc=$("#scroller"),r=p.getBoundingClientRect(),sr=sc.getBoundingClientRect();sc.scrollTop=Math.max(0,sc.scrollTop+r.top-sr.top-(sc.clientHeight-r.height)/2)},30);
   flashT=setTimeout(()=>unflash(p),2200);
   return true;
 }
@@ -1675,6 +1686,14 @@ function sxPrep(v){   /* quietly, while typing: build the index once and keep th
     if(window.requestIdleCallback)requestIdleCallback(run,{timeout:500});else run()},80);
 }
 function hymnTitle(h){if(h>1000)return(OLDH[h]||[""])[0];const hy=HYMNS[h-1];return hy?hy.f:""}
+function showSearchPurposeNotice(){
+  /* Once per revision: an older revision's acknowledgement must not suppress this revision's note. */
+  if(S.searchPurposeNoticeRevision===SEARCH_NOTICE_REV)return;
+  S.searchPurposeNoticeShown=true;   /* retained for compatibility with v1.66 backups */
+  S.searchPurposeNoticeRevision=SEARCH_NOTICE_REV;
+  try{localStorage.setItem("hbs.settings",JSON.stringify(S))}catch(e){}
+  setTimeout(()=>bkOpen("A quick note about search",'<p><b>Search is a time-saver, not a research tool.</b></p><p>It is designed to help you quickly find a song from words or phrases you remember in bits and pieces—without the time and headache of searching around.</p><p>For proper context, please sing the entire song rather than analyzing only the highlighted words.</p>',"Got it",null,true),550);
+}
 function doSearch(raw,commit){
   const q=raw.trim();
   if(!q){clearFilter(true);return}
@@ -1712,6 +1731,7 @@ function openResult(k,dir){
     if(dir)show(it.page,dir);else nav(it.page);
   }
   updatePos();
+  if(it.h)showSearchPurposeNotice();
 }
 function updatePosEmpty(){$("#posMain").textContent="No matches";$("#posSub").textContent="Clear the search to browse";$("#prevBtn").disabled=$("#nextBtn").disabled=true;$("#prevBtn").style.opacity=$("#nextBtn").style.opacity=.3;$("#pageCard").innerHTML='<p class="p ctr" style="color:var(--muted);margin-top:3em">Nothing matches this text.<br>Try fewer or different words.</p>'}
 function clearFilter(rerender){
@@ -4105,7 +4125,7 @@ function playMel(n){
   bgPlay();
   const built=buildEvents(r.mel,n);
   const master=ctx.createGain();master.gain.value=0.3*(S.melVol==null?0.8:S.melVol/100);master.connect(ctx.destination);
-  PL=Object.assign(built,{n,mel:r.mel,tune:r.tune,unc:!r.mel.c,master,nodes:[],idx:0,rawBpm:r.mel.bpm||96,baseBpm:naturalBaseBpm(r.mel.bpm||96),cur:-1,key:"",paused:false});
+  PL=Object.assign(built,{n,mel:r.mel,tune:r.tune,unc:!r.mel.c,master,nodes:[],idx:0,rawBpm:r.mel.bpm||96,baseBpm:naturalBaseBpm(r.mel.bpm||96),cur:-1,key:"",bodyVerse:-2,paused:false});
   PL.segs=[{t:ctx.currentTime+0.12,b:0,bpm:bpmNow()}];
   $("#plTitle").textContent=`${hlab(n)} · ${r.tune}`;$("#plTitle").title=r.mel.src?("Melody source: "+r.mel.src):"Melody written from memory";if(PL.unc)$("#plTitle").title+=" (less certain)";$("#plBadge").style.display=PL.unc?"":"none";
   keyLabel();
@@ -4115,7 +4135,7 @@ function playMel(n){
   playbackLock(n);startMelAutoScroll(n);syncSpeedUI();refreshPlayBtns();schedule();tick();
 }
 function stopMel(quiet){
-  stopMelAutoScroll();cancelAnimationFrame(raf);clearTimeout(SCHED);
+  stopMelAutoScroll();clearMelodyBodyHighlight();cancelAnimationFrame(raf);clearTimeout(SCHED);
   if(PL){const m=PL.master,ns=PL.nodes;try{m.gain.cancelScheduledValues(0);m.gain.setValueAtTime(m.gain.value,AC.currentTime);m.gain.linearRampToValueAtTime(0,AC.currentTime+0.04)}catch(e){}
     setTimeout(()=>{ns.forEach(x=>x.os.forEach(o=>{try{o.stop()}catch(e){}}));try{m.disconnect()}catch(e){}},80);
     if(PL.paused&&AC){try{AC.resume()}catch(e){}}}
@@ -4186,6 +4206,12 @@ function plApply(){
 function sizePlayer(){const h=$("#player").offsetHeight;if(h)document.body.style.setProperty("--plh",h+"px")}
 window.addEventListener("resize",()=>{if(PL)sizePlayer();if(REC_N)sizeRec()});
 function refreshPlayBtns(){wake();document.querySelectorAll("#pageCard .hyplay").forEach(d=>{const n=+d.dataset.n;d.outerHTML=n>1000?oldBar(n):hyBar(n)})}
+function clearMelodyBodyHighlight(){document.querySelectorAll("#pageCard .melodyNow").forEach(x=>{x.classList.remove("melodyNow");x.removeAttribute("aria-current")})}
+function syncMelodyBodyHighlight(n,v){
+  clearMelodyBodyHighlight();if(!(v>=0))return;
+  document.querySelectorAll(`#pageCard [data-hymn="${n}"][data-verse="${v}"],#pageCard [data-hymn="${n}"][data-verse-all="1"]`).forEach(x=>{x.classList.add("melodyNow");x.setAttribute("aria-current","true")});
+}
+function restoreMelodyBodyHighlight(){if(!PL||PL.cur<0)return;const e=PL.ev[PL.cur];if(e&&e.v>=0)syncMelodyBodyHighlight(PL.n,e.v)}
 function tick(){
   if(!PL||PL.paused)return;
   const beat=beatAt(AC.currentTime),ev=PL.ev;
@@ -4194,6 +4220,7 @@ function tick(){
   while(i>0&&ev[i].b>beat)i--;
   const e=ev[i];
   if(e&&e.li>=0){
+    if(e.v!==PL.bodyVerse){PL.bodyVerse=e.v;syncMelodyBodyHighlight(PL.n,e.v)}
     const key=e.v+":"+e.li;
     if(key!==PL.key){PL.key=key;
       const vs=PL.verses.length>1?` · Verse ${e.v+1} of ${PL.verses.length}`:"";
@@ -4255,6 +4282,7 @@ function applySettings(){
   document.documentElement.style.setProperty("--lh",S.lh);const pf=PLBIG||(S.melSizeLinked?Math.max(13,Math.min(34,Math.round(S.fs))):S.melFs);document.documentElement.style.setProperty("--pfs",pf+"px");document.querySelector("#player").style.setProperty("--pfs",pf+"px");
   document.querySelector('meta[name=theme-color]').content=THEME_COLOR[S.theme]||THEME_COLOR.black;
   document.querySelectorAll("#segTheme button").forEach(b=>b.classList.toggle("on",b.dataset.v===S.theme));
+  const tb=$("#themeBtn"),themeNames={black:"Black",dark:"Dark",light:"Light"};if(tb){const ni=(THEMES.indexOf(S.theme)+1)%THEMES.length,next=THEMES[ni];tb.setAttribute("aria-label","Theme: "+themeNames[S.theme]+". Switch to "+themeNames[next]);tb.title="Theme: "+themeNames[S.theme]+" · switch to "+themeNames[next]}
   document.querySelectorAll("#segFont button").forEach(b=>b.classList.toggle("on",b.dataset.v===S.font));
   $("#fs").value=S.fs;$("#fsVal").textContent=S.fs+" px";$("#lh").value=S.lh;$("#lhVal").textContent=(+S.lh).toFixed(2);
   $("#optDevFlags").checked=!!S.devFlags;scrollUI();$("#optOld").checked=S.old;$("#optHideC").checked=!S.hideC;$("#optHideU").checked=!S.hideU;$("#optHideN").checked=!S.hideN;$("#grpAdvSum").textContent=mfOn()?"Melody filter on":"";$("#optWake").checked=S.wake;$("#optMel").checked=S.mel;$("#optMelU").checked=S.melU;$("#optOffline").checked=!!S.offline;$("#optRecCertain").checked=!!S.recCertain;$("#rowRecCertain").classList.toggle("dis",!S.mel||!!S.offline);$("#optRecUncertain").checked=!!S.recUncertain;$("#rowRecUncertain").classList.toggle("dis",!S.mel||!!S.offline);$("#optShowOld").checked=!!S.showOld;$("#optIdxSearch").checked=!!S.idxSearch;document.body.classList.toggle("offline",!!S.offline);$("#rowOffline").classList.toggle("dis",!S.mel);$("#optMelNotes").checked=!!S.melNotes;$("#rowMelU").classList.toggle("dis",!S.mel);$("#rowMelNotes").classList.toggle("dis",!S.mel);$("#melOpts").classList.toggle("dis",!S.mel);
@@ -4267,6 +4295,7 @@ function applySettings(){
   wake();
 }
 $("#segTheme").onclick=e=>{const b=e.target.closest("button");if(b){S.theme=b.dataset.v;applySettings()}};
+$("#themeBtn").onclick=()=>{const i=THEMES.indexOf(S.theme);S.theme=THEMES[(i+1)%THEMES.length];applySettings()};
 $("#segFont").onclick=e=>{const b=e.target.closest("button");if(b){S.font=b.dataset.v;applySettings()}};
 $("#fs").oninput=e=>{S.fs=+e.target.value;applySettings()};
 $("#lh").oninput=e=>{S.lh=+e.target.value;applySettings()};
@@ -4401,12 +4430,12 @@ window.addEventListener("hashchange",fromHash);
 
 
 /* ---------- backup / restore settings ---------- */
-const APP_NAME="Hymnal_v1.64",APP_VER="1.64",BK_FORMAT=1,BK_SCHEMA="18";
+const APP_NAME="Hymnal_v1.67",APP_VER="1.67",BK_FORMAT=1,BK_SCHEMA="21";
 const BK_RULES=(function(){
   const num=(lo,hi,int)=>v=>{if(typeof v==="string"&&v.trim()!=="")v=+v;if(typeof v!=="number"||!isFinite(v)||v<lo||v>hi)return undefined;return int?Math.round(v):Math.round(v*100)/100};
   const pick=l=>v=>typeof v==="string"&&l.indexOf(v)>=0?v:undefined;
   const bool=v=>typeof v==="boolean"?v:(v===1||v==="true"||v==="1"||v==="on")?true:(v===0||v==="false"||v==="0"||v==="off")?false:undefined;
-  return{theme:pick(THEMES),fs:num(13,34),lh:num(1.2,2.1),font:pick(["serif","sans"]),melSound:pick(["organ","piano","flute","bells"]),melSpeed:num(50,150,true),melVol:num(0,100,true),melBreath:pick(["off","natural","long"]),melKey:num(-6,6,true),melFs:num(13,34,true),melSpeeds:v=>(v&&typeof v==="object"&&!Array.isArray(v))?cleanSpeeds(v):undefined,_bool:bool}
+  return{theme:pick(THEMES),fs:num(13,34),lh:num(1.2,2.1),font:pick(["serif","sans"]),melSound:pick(["organ","piano","flute","bells"]),melSpeed:num(50,150,true),melVol:num(0,100,true),melBreath:pick(["off","natural","long"]),melKey:num(-6,6,true),melFs:num(13,34,true),melSpeeds:v=>(v&&typeof v==="object"&&!Array.isArray(v))?cleanSpeeds(v):undefined,searchPurposeNoticeRevision:v=>typeof v==="string"&&/^\d+\.\d+$/.test(v)?v.slice(0,20):undefined,_bool:bool}
 })();
 /* Keeps only known settings with valid values. Anything missing or unrecognised (e.g. from an older or newer version) falls back to the default. */
 function bkCleanSettings(src){
@@ -4427,8 +4456,8 @@ function bkCleanBasic(src){
   return out;
 }
 function bkDate(){const d=new Date();try{const p=new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",year:"numeric",month:"numeric",day:"numeric"}).formatToParts(d),o={};p.forEach(x=>o[x.type]=x.value);return o.month+"."+o.day+"."+o.year}catch(e){return (d.getMonth()+1)+"."+d.getDate()+"."+d.getFullYear()}}
-/* e.g. "Hymnal_v1.64 (Settings_11.12.2026).json" */
-function bkName(){return APP_NAME+" (Settings_"+bkDate()+").json"}
+/* e.g. "Hymnal_v1.67 Settings (11.12.2026).json" — parentheses contain only the Pacific date. */
+function bkName(){return APP_NAME+" Settings ("+bkDate()+").json"}
 function cleanFlagNotes(src){const out={};if(Array.isArray(src))src.forEach(x=>{if(!x||typeof x!=="object")return;const n=parseInt(x.hymn!=null?x.hymn:x.id,10),v=String(x.note||x.request||"").trim().slice(0,240);if(Number.isInteger(n)&&hymnPage[n]!=null&&v)out[n]=v});else if(src&&typeof src==="object")Object.keys(src).forEach(k=>{const n=parseInt(k,10),v=String(src[k]||"").trim().slice(0,240);if(String(n)===k&&hymnPage[n]!=null&&v)out[n]=v});return out}
 function flagRows(){return Object.keys(FLAG_NOTES).map(Number).filter(n=>hymnPage[n]!=null&&FLAG_NOTES[n]).sort((a,b)=>a-b).map(n=>({hymn:n,label:hlab(n),title:hymnTitle(n)||"",tune:hymnTune[n]||"",note:FLAG_NOTES[n]}))}
 function cleanGeneralNote(src){if(src&&typeof src==="object")src=src.note||src.request||src.text||"";return String(src||"").trim().slice(0,240)}
@@ -4583,11 +4612,12 @@ Object.assign(MELODY_REVIEW,{"192": {"status": "Added", "tune": "Ingen Hinner Fr
    HYB[n] is where hymn n really starts and ends: first page, index of its first block, last page, and the index just after its last block there. */
 const HYB={};
 (function(){
-  let owner=0;
+  let owner=0,verse=-1;
   PAGES.forEach((p,i)=>p.b.forEach((b,j)=>{
     b._j=j;
-    if(b.k==="hy")owner=b.n;else if(b.k==="oh")owner=b.id;else if(b.k==="s1"||b.k==="s2"||b.k==="s3")owner=0;   /* old hymns (v1.55) get their own lock range */
-    b._o=owner;
+    if(b.k==="hy"){owner=b.n;verse=0}else if(b.k==="oh"){owner=b.id;verse=0}else if(b.k==="s1"||b.k==="s2"||b.k==="s3"){owner=0;verse=-1}   /* old hymns (v1.55) get their own lock range */
+    else if(b.k==="v"&&owner)verse++;
+    b._o=owner;b._hv=owner&&/^(hy|oh|v|vc)$/.test(b.k)?verse:-1;
     if(owner){const r=HYB[owner]||(HYB[owner]={a:i,aj:j,z:i,zj:j+1});r.z=i;r.zj=j+1}
   }));
 })();
@@ -4647,6 +4677,7 @@ function flowRender(){
     h+='<section class="flowpg'+(p.b.some(x=>x.k==="pub")?" tp":"")+'" data-i="'+i+'" data-lab="'+(p.l?"Page "+esc(p.l):"")+'">'+inner+'</section>';
   }
   card.innerHTML=h;card.className="pg flow";
+  restoreMelodyBodyHighlight();
   FLOWEL=[];card.querySelectorAll(".flowpg").forEach(el=>{FLOWEL[+el.dataset.i]=el});
   FLOWSIG=flowSig();
   flowSetHidden();
@@ -4703,6 +4734,9 @@ function flowShow(i,dir,hymn,force){
     if(dir){toast("Scroll Lock is on for "+lockName()+". Tap Scroll Lock to release it.");return}   /* Next / Previous stay inside what is locked */
     LOCK=null;toast("Scroll Lock released");if(FLOWEL.length){flowSetHidden();syncLockBtns()}   /* going somewhere else on purpose releases it: show every page again (v1.58) */
   }
+  /* A deliberate jump away from the playing hymn must win over synchronized auto-scroll.
+     Playback and its verse highlight continue; auto-scroll restarts only with the next playback start. */
+  if(MEL_AUTO.on&&PL){const pr=HYB[PL.n],same=hymn===PL.n||(!hymn&&pr&&i>=pr.a&&i<=pr.z);if(!same){MEL_AUTO.on=false;MEL_AUTO.drag=false}}
   const card=$("#pageCard"),inFlow=card.classList.contains("flow")&&!!card.querySelector(".flowpg");
   const refresh=inFlow&&!force&&!dir&&!hymn&&i===cur;   /* a settings change redraws the pages in place */
   if(!inFlow||refresh||flowSig()!==FLOWSIG){
@@ -4787,15 +4821,14 @@ function scrollUI(){
 $("#scrollBtn").onclick=()=>{S.scroll=!S.scroll;if(!S.scroll)LOCK=null;applySettings();show(cur,0)};
 $("#optScrollBtn").onchange=e=>{S.scrollBtn=e.target.checked;if(!S.scrollBtn){S.scroll=false;LOCK=null}applySettings();show(cur,0)};
 /* the search box shows the longest hint that fits, so the Scroll button never cuts it off */
-const PHS=["Hymn #, page #, old #, or words\u2026","Hymn #, page #, or words\u2026","Hymn # or words\u2026","Hymn or words\u2026","Search\u2026"];
+const SEARCH_PLACEHOLDER="Search number or words…";
 function fitPlaceholder(){
   const q=$("#q");if(!q||!q.clientWidth)return;
-  const cs=getComputedStyle(q),c=fitPlaceholder.c||(fitPlaceholder.c=document.createElement("canvas").getContext("2d"));
-  c.font=cs.fontSize+" "+cs.fontFamily;
-  const avail=q.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-6;
-  let pick=PHS[PHS.length-1];
-  for(let k=0;k<PHS.length;k++){if(c.measureText(PHS[k]).width<=avail){pick=PHS[k];break}}
-  if(q.placeholder!==pick)q.placeholder=pick;
+  const cs=getComputedStyle(q),c=fitPlaceholder.c||(fitPlaceholder.c=document.createElement("canvas").getContext("2d")),base=16;
+  c.font=base+"px "+cs.fontFamily;
+  const avail=Math.max(1,q.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-4),need=Math.max(1,c.measureText(SEARCH_PLACEHOLDER).width);
+  q.placeholder=SEARCH_PLACEHOLDER;
+  q.style.setProperty("--ph-size",Math.max(9,Math.min(base,base*avail/need)).toFixed(1)+"px");
 }
 window.addEventListener("resize",()=>{fitPlaceholder();flowBar()});
 if(window.ResizeObserver)new ResizeObserver(()=>flowBar()).observe($("#main"));   /* the bar re-fits when the player opens or closes */
@@ -4803,7 +4836,7 @@ if(window.ResizeObserver)new ResizeObserver(()=>flowBar()).observe($("#main")); 
 /* ---- full-screen view: View Code (read-only) ---- */
 function ovClose(){document.querySelectorAll(".fsOv.show").forEach(e=>e.classList.remove("show"));document.body.classList.remove("ovOpen")}
 function ovShow(id){ovClose();$("#"+id).classList.add("show");document.body.classList.add("ovOpen")}
-const REVS=[{"v":"1.64","d":"11.12.2026","t":"Added a general update flag directly on the Title Page when Developer song flags are enabled; it uses the same mobile-friendly note editor, persists locally, and is included in Backup/Restore and the AI implementation request. A grey Play melody button for a song with no embedded melody but an available recording now asks whether to play the recording; Yes opens it in the in-app recording window and explains that recording buttons can be enabled globally in Settings without changing those settings. During embedded melody playback, the locked song now scrolls gradually in sync with playback; manual touch-drag, mouse wheel, pointer drag, or keyboard scrolling disables auto-scroll until playback is stopped and started again. Tested on desktop and mobile."},{"v":"1.63","d":"11.11.2026","t":"Playback now automatically turns on Scroll mode and Scroll Lock for the hymn whose embedded melody or online recording is playing. Advanced settings adds Developer song flags, off by default: a flag appears beside every song, opens a short-note editor and persists locally. Backup Settings exports the flags as structured flaggedSongs plus an explicit implementation request for M365 Copilot or Claude; Restore Settings imports them. The app was regression-tested on desktop and mobile."},{"v":"1.62","d":"11.11.2026","t":"Added a Detailed summary button on the same line as Show melody notes. It opens a compact full-screen live report with overview counts, Certain/Uncertain/Missing tune details, the full recording catalog, Christmas checks and old-hymn status, using the app’s own source and recording strings. Calibrated the melody speed zero point: already-slow tunes keep their tempo while faster defaults are eased down progressively. On desktop, Settings is now a persistent right-side tab and the reading area makes room for it; mobile keeps the bottom sheet. Rechecked all 17 hymns in the Christmas index: all retain Certain embedded melodies and Primary plus Secondary recordings, and verified tune-reference links were added."},{"v":"1.61","d":"11.11.2026","t":"Verified the v1.60 search, recording switches, recording window, short-screen limits, old-hymn candidates and Player text size backup. Settings groups now wait 3 seconds after closing before collapsing; reopening during that time keeps the same section open. Recording switches refresh buttons in place so Recording appears immediately without moving the page. Recording-link cleanup: plain/direct versions are primary for Hymns 54 and 266; the Singing Monsters links were removed from Hymns 165 and 174 and the conventional Bach recording was promoted."},{"v":"1.60","d":"11.11.2026","t":"New search: nothing moves while you type; on Enter a close match opens at the start of its song (play button in view), otherwise a list of suggestions opens, best first, tolerant of typos and jumbled word order. Recordings are off by default for certain AND uncertain melodies (two switches in Melody playback, saved in Backup Settings; songs with no melody always show theirs); recording buttons now sit beside Play melody / Play candidate. Bigger Close button on the recording window and a note that recordings are matched by title and tune, not audio. More recording links; nine more old hymns have candidate melodies. Fixes: short screens, “Player text size” in Backup Settings."},{"v":"1.59","d":"11.11.2026","t":"Recording window: the hosted player page now says hello and stays hidden until it does, so the hymn book’s title page can never show inside it (an old website copy just makes the app try another player). 266 more hymns have recording links, each with a secondary link and the video title shown, including nearly all Certain melodies (hidden until “Recordings for certain melodies” is on); Hymn 200 now has the FOUNDATION tune."},{"v":"1.58","d":"11.10.2026","t":"Fixes: the Title Page (and any other jump) now really releases Scroll Lock; page 317 offers the old songs; YouTube error 153 is handled by choosing a player that sends the right web address, with an Other player button; the screen is kept awake more reliably during playback (status shown in Settings). New: Enlarge button on the melody player; recording links for Certain melodies (off by default, switch under Melody playback) and many more recordings and secondary links; more search-engine blocking; old-hymn text tidied."},{"v":"1.57","d":"11.9.2026","t":"When the app is opened at its GitHub website, a pop-up offers View Online or Offline Download. Offline Download fetches the “Hosted” file from the americanhymns / 3hTE-Q-Reab8-H repository (so it is always the latest version) and saves it as Hymnal_v<version>.html; the same Download button is in Advanced settings next to the Website link."},{"v":"1.56","d":"11.9.2026","t":"Old hymn 91 (What Child Is This) has a melody, Greensleeves, read from the supplied note sheet; old hymns 97, 271 and 351 have candidate melodies (tunes already in the app). Slurs can now be written into a tune, so the highlighted words follow Greensleeves exactly. The hosting link has no % characters (https://americanhymns.github.io/3hTE-Q-Reab8-H/Hosted) and is used everywhere in the app."},{"v":"1.55","d":"11.9.2026","t":"Old hymns now have Scroll Lock and Favorites buttons (favorites are kept, and listed, while old hymns are on). More recording links, with secondary links, for old hymns and for Hymns 32 and 248; melodies added for old hymns 197 and 277. Syllable counting now handles ä, ö and å and Finnish words, so the highlighted words follow Finnish and Swedish songs better."},{"v":"1.54","d":"11.9.2026","t":"Word search now goes straight to the song (index pages are left out unless a match exists only there; optional switch in Advanced). Shorter search flash. New and secondary recording links, an optional recording from “Play candidate”, and a Fully offline switch. New Revision page. 127 old hymns from the previous hymn book, hidden and out of search until loaded."},{"v":"1.53","d":"11.9.2026","t":"Full-screen button shows a minimize icon. The searched words and the exact spot flash (also after an index link and in Scroll mode). The melody filter no longer hides songs when all three switches are on or off, or while searching. Melody word-sync rewritten (syllable counts, slurs, “etc.” choruses, Antioch fix). Recordings play inside the app. One hosting link used everywhere."}];
+const REVS=[{"v":"1.67","d":"11.12.2026","t":"Searching or otherwise navigating to a different song while an embedded melody is playing now stops synchronized auto-scroll before jumping instantly to the destination; melody playback and its active-verse highlight continue until stopped. Search-hit centering no longer uses smooth scrolling, preventing other long animated jumps in Scroll mode. Added a compact theme switcher between Full screen and Settings that cycles Black, Dark and Light exactly like the Theme setting. The search hint now always reads Search number or words and scales to fit without dropping either number or words. The search-purpose note is tracked per app revision, so it appears once in v1.67 even if the same user acknowledged it in an earlier revision. Tested on desktop and mobile."},{"v":"1.66","d":"11.12.2026","t":"The first text search that opens a song and highlights a match now shows a one-time, gentle note explaining that quick search is a time-saver for finding a remembered song, not a research tool, and recommends singing the entire song for proper context. The notice occurrence is saved with app settings and included in Backup/Restore so it does not repeat in future versions. The currently playing verse highlight is lighter and fades between verses more gradually. Tested on desktop and mobile."},{"v":"1.65","d":"11.12.2026","t":"The main hymn body now highlights the verse or paragraph currently being sung by embedded melody playback in light yellow, with a soft transition and an automatic jump to the next verse at the first note of that verse; continuation paragraphs and old-hymn choruses stay grouped with the active verse, and the highlight survives in-song redraws and clears on Stop. Settings backups now use the filename format Hymnal_v1.65 Settings (date).json, with only the Pacific date inside parentheses. Implemented the attached general update flag and completed desktop and mobile regression checks."},{"v":"1.64","d":"11.12.2026","t":"Added a general update flag directly on the Title Page when Developer song flags are enabled; it uses the same mobile-friendly note editor, persists locally, and is included in Backup/Restore and the AI implementation request. A grey Play melody button for a song with no embedded melody but an available recording now asks whether to play the recording; Yes opens it in the in-app recording window and explains that recording buttons can be enabled globally in Settings without changing those settings. During embedded melody playback, the locked song now scrolls gradually in sync with playback; manual touch-drag, mouse wheel, pointer drag, or keyboard scrolling disables auto-scroll until playback is stopped and started again. Tested on desktop and mobile."},{"v":"1.63","d":"11.11.2026","t":"Playback now automatically turns on Scroll mode and Scroll Lock for the hymn whose embedded melody or online recording is playing. Advanced settings adds Developer song flags, off by default: a flag appears beside every song, opens a short-note editor and persists locally. Backup Settings exports the flags as structured flaggedSongs plus an explicit implementation request for M365 Copilot or Claude; Restore Settings imports them. The app was regression-tested on desktop and mobile."},{"v":"1.62","d":"11.11.2026","t":"Added a Detailed summary button on the same line as Show melody notes. It opens a compact full-screen live report with overview counts, Certain/Uncertain/Missing tune details, the full recording catalog, Christmas checks and old-hymn status, using the app’s own source and recording strings. Calibrated the melody speed zero point: already-slow tunes keep their tempo while faster defaults are eased down progressively. On desktop, Settings is now a persistent right-side tab and the reading area makes room for it; mobile keeps the bottom sheet. Rechecked all 17 hymns in the Christmas index: all retain Certain embedded melodies and Primary plus Secondary recordings, and verified tune-reference links were added."},{"v":"1.61","d":"11.11.2026","t":"Verified the v1.60 search, recording switches, recording window, short-screen limits, old-hymn candidates and Player text size backup. Settings groups now wait 3 seconds after closing before collapsing; reopening during that time keeps the same section open. Recording switches refresh buttons in place so Recording appears immediately without moving the page. Recording-link cleanup: plain/direct versions are primary for Hymns 54 and 266; the Singing Monsters links were removed from Hymns 165 and 174 and the conventional Bach recording was promoted."},{"v":"1.60","d":"11.11.2026","t":"New search: nothing moves while you type; on Enter a close match opens at the start of its song (play button in view), otherwise a list of suggestions opens, best first, tolerant of typos and jumbled word order. Recordings are off by default for certain AND uncertain melodies (two switches in Melody playback, saved in Backup Settings; songs with no melody always show theirs); recording buttons now sit beside Play melody / Play candidate. Bigger Close button on the recording window and a note that recordings are matched by title and tune, not audio. More recording links; nine more old hymns have candidate melodies. Fixes: short screens, “Player text size” in Backup Settings."},{"v":"1.59","d":"11.11.2026","t":"Recording window: the hosted player page now says hello and stays hidden until it does, so the hymn book’s title page can never show inside it (an old website copy just makes the app try another player). 266 more hymns have recording links, each with a secondary link and the video title shown, including nearly all Certain melodies (hidden until “Recordings for certain melodies” is on); Hymn 200 now has the FOUNDATION tune."},{"v":"1.58","d":"11.10.2026","t":"Fixes: the Title Page (and any other jump) now really releases Scroll Lock; page 317 offers the old songs; YouTube error 153 is handled by choosing a player that sends the right web address, with an Other player button; the screen is kept awake more reliably during playback (status shown in Settings). New: Enlarge button on the melody player; recording links for Certain melodies (off by default, switch under Melody playback) and many more recordings and secondary links; more search-engine blocking; old-hymn text tidied."},{"v":"1.57","d":"11.9.2026","t":"When the app is opened at its GitHub website, a pop-up offers View Online or Offline Download. Offline Download fetches the “Hosted” file from the americanhymns / 3hTE-Q-Reab8-H repository (so it is always the latest version) and saves it as Hymnal_v<version>.html; the same Download button is in Advanced settings next to the Website link."},{"v":"1.56","d":"11.9.2026","t":"Old hymn 91 (What Child Is This) has a melody, Greensleeves, read from the supplied note sheet; old hymns 97, 271 and 351 have candidate melodies (tunes already in the app). Slurs can now be written into a tune, so the highlighted words follow Greensleeves exactly. The hosting link has no % characters (https://americanhymns.github.io/3hTE-Q-Reab8-H/Hosted) and is used everywhere in the app."},{"v":"1.55","d":"11.9.2026","t":"Old hymns now have Scroll Lock and Favorites buttons (favorites are kept, and listed, while old hymns are on). More recording links, with secondary links, for old hymns and for Hymns 32 and 248; melodies added for old hymns 197 and 277. Syllable counting now handles ä, ö and å and Finnish words, so the highlighted words follow Finnish and Swedish songs better."},{"v":"1.54","d":"11.9.2026","t":"Word search now goes straight to the song (index pages are left out unless a match exists only there; optional switch in Advanced). Shorter search flash. New and secondary recording links, an optional recording from “Play candidate”, and a Fully offline switch. New Revision page. 127 old hymns from the previous hymn book, hidden and out of search until loaded."},{"v":"1.53","d":"11.9.2026","t":"Full-screen button shows a minimize icon. The searched words and the exact spot flash (also after an index link and in Scroll mode). The melody filter no longer hides songs when all three switches are on or off, or while searching. Melody word-sync rewritten (syllable counts, slurs, “etc.” choruses, Antioch fix). Recordings play inside the app. One hosting link used everywhere."}];
 function revOpen(){
   $("#revBody").innerHTML=REVS.map(r=>`<div class="rev"><h3>Revision ${esc(r.v)} <small>${esc(r.d)}</small></h3><p>${esc(r.t)}</p></div>`).join("");
   ovShow("revView");$("#revBody").scrollTop=0;
@@ -5026,7 +5059,7 @@ try{const st=document.getElementById("hbStatic");if(st&&st.parentNode)st.parentN
 @media(max-width:380px){#melReviewDialog .mrVer{display:none}.mrStats{grid-template-columns:1fr}.mrStat{display:flex;align-items:baseline;justify-content:center;gap:8px}.mrStat b{display:inline}}
 @media print{#melReviewDialog[open]{position:static;width:auto;height:auto;display:block;background:#fff;color:#000}#melReviewDialog .mrHead{position:static;box-shadow:none}.mrBody{height:auto;overflow:visible}.mrX,.mrShow{display:none!important}.reviewItem,.mrStat{break-inside:avoid;background:#fff}}
 </style>
-<dialog id="melReviewDialog" aria-labelledby="melReviewHeading"><div class="mrHead"><h2 id="melReviewHeading">Melodies status</h2><span class="mrVer">v1.64 · 11.12.2026</span><label class="mrShow">Show <select id="melReviewFilter"><option value="overview">Overview</option><option value="certain">Certain melodies</option><option value="uncertain">Uncertain melodies</option><option value="missing">Missing melodies</option><option value="recordings">Recording catalog</option><option value="christmas">Christmas check</option><option value="old">Old hymns</option></select></label><button id="closeMelReview" type="button" class="mrX" aria-label="Close melodies status" title="Close">&times;</button></div><div id="melReviewItems" class="mrBody"></div></dialog>
+<dialog id="melReviewDialog" aria-labelledby="melReviewHeading"><div class="mrHead"><h2 id="melReviewHeading">Melodies status</h2><span class="mrVer">v1.67 · 11.12.2026</span><label class="mrShow">Show <select id="melReviewFilter"><option value="overview">Overview</option><option value="certain">Certain melodies</option><option value="uncertain">Uncertain melodies</option><option value="missing">Missing melodies</option><option value="recordings">Recording catalog</option><option value="christmas">Christmas check</option><option value="old">Old hymns</option></select></label><button id="closeMelReview" type="button" class="mrX" aria-label="Close melodies status" title="Close">&times;</button></div><div id="melReviewItems" class="mrBody"></div></dialog>
 <script>
 (function(){
 if(window.HB_MODE!=="full"||!window.HBMelodyReview)return;
