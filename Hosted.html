@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate, noai, noimageai, max-snippet:0, max-image-preview:none, max-video-preview:0">
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate, max-snippet:0, max-image-preview:none, max-video-preview:0">
 <meta name="googlebot-news" content="noindex, nofollow, nosnippet">
@@ -32,7 +33,6 @@ document.write('<style>html,body{margin:0;height:100%;background:#000;overflow:h
    hymn book must never show up, so hide it and tell the app, which then tries another player. */
 (function(){try{if(window.top!==window.self&&/^#hbplayer=/.test(location.hash)){document.documentElement.style.visibility="hidden";parent.postMessage(JSON.stringify({hbp:"app"}),"*")}}catch(e){}})();
 </script>
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -295,7 +295,7 @@ body.light .pl-words .pw::before{background:#f3d98c}
 #plLine{white-space:nowrap;font-size:12px}
 .pl-head b{min-width:0;flex:0 1 auto}
 @media (max-width:560px){.pl-head{flex-wrap:wrap;row-gap:2px}.pl-head b{flex:1 1 0;min-width:4em}#plLine{order:5;flex-basis:100%;font-size:12px}#plPause{margin-left:0}}
-@media (max-width:480px){#plPause,#plStop{font-size:0;padding:7px 9px;gap:0}#plPause svg,#plStop svg{width:14px;height:14px}.pl-speed span{min-width:6.5em}}
+@media (max-width:480px){.pl-speed span{min-width:6.5em}}
 .pl-key{font-size:12px;color:var(--accent);white-space:nowrap}
 #plPause{margin-left:auto}#plPause+#plStop{margin-left:0}
 
@@ -326,7 +326,7 @@ body.light .pl-words .pw::before{background:#f3d98c}
 #melReviewDialog .mrHead h2{flex:1;margin:0;font-size:19px}
 #melReviewDialog .mrX{width:40px;height:40px;margin:0!important;padding:0!important;border-radius:50%!important;font-size:26px!important;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer}
 #melReviewDialog.fallback{position:fixed;top:5vh;left:3vw;right:3vw;margin:auto;z-index:60;overflow:auto;-webkit-overflow-scrolling:touch}
-@media print{#bar,#nav,#chip,#player,#toast,#results,.hyplay,.pnum{display:none!important}html,body{height:auto;background:#fff;color:#000}#main{position:static}#scroller{overflow:visible;height:auto;padding:0}#pageCard{box-shadow:none;background:#fff;color:#000;border:0!important;max-width:none}}
+@media print{#bar,#nav,#chip,#player,#recPlayer,#settings,#toc,#melFollow,#asResume,#fsbar,#fsbub,#vsheet,.scrim,#toast,#results,.hyplay,.pnum{display:none!important}html,body{height:auto;background:#fff;color:#000}#main{position:static}#scroller{overflow:visible;height:auto;padding:0}#pageCard{box-shadow:none;background:#fff;color:#000;border:0!important;max-width:none}}
 
 /* melody notes: a full-width row, never an overlay on the controls. */
 #pageCard .hyplay{display:flex;flex-wrap:wrap;align-items:center;gap:8px;height:auto;min-height:32px;overflow:visible;margin-bottom:12px}
@@ -363,7 +363,7 @@ body.flow #scroller::-webkit-scrollbar{display:none}
 body.flow #fsbar{display:block}
 #fsbar:before{content:"";position:absolute;top:6px;bottom:6px;right:10px;width:4px;border-radius:2px;background:var(--line)}
 #fsthumb{position:absolute;right:6px;width:12px;border-radius:6px;background:var(--muted);opacity:.7;min-height:44px;display:none;transition:background .12s,opacity .12s}
-#fsbar:hover #fsthumb,#fsbar.drag #fsthumb{background:#f5c518;opacity:1}
+#fsbar.drag #fsthumb{background:#f5c518;opacity:1}@media (hover:hover){#fsbar:hover #fsthumb{background:#f5c518;opacity:1}}
 #fsbar.drag #fsthumb{right:4px;width:16px}
 #fsbub{position:absolute;right:38px;z-index:13;display:none;transform:translateY(-50%);background:#f5c518;color:#1a1a1a;border-radius:10px;padding:6px 12px;font:600 13px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;white-space:nowrap;pointer-events:none;box-shadow:0 2px 10px rgba(0,0,0,.35)}
 .fsOv{position:fixed;top:0;right:0;bottom:0;left:0;z-index:80;background:var(--bg);color:var(--text);display:none;flex-direction:column;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
@@ -463,7 +463,7 @@ body.black #bkDlg{border:1px solid var(--line)}
 .playBtn.recBtn.on{background:var(--accent);color:var(--accent-ink)!important}
 
 .jumpFlash{animation:jumpFlash 1.1s ease}@keyframes jumpFlash{0%,65%{background:rgba(255,224,90,.28);box-shadow:0 0 0 4px rgba(255,224,90,.2)}100%{background:transparent;box-shadow:none}}
-@media(max-width:440px){#fullBtn{width:38px;height:40px}#tocBtn,#setBtn{width:38px!important}}
+@media(max-width:440px){#tocBtn,#fullBtn,#themeBtn,#setBtn{width:38px!important;height:40px}}@media(max-width:360px){#fullBtn,#themeBtn,#setBtn{width:36px!important}}
 
 </style>
 <style>
@@ -723,12 +723,12 @@ body.noEnlarge #plBig+#plPause{margin-left:auto}
 
 /* v1.62: on desktop Settings is a persistent right-side tab and the reading area makes room for it. Mobile keeps the bottom sheet unchanged. */
 :root{--settings-w:min(430px,42vw)}
-#bar,#main,#nav,#player,#results{transition:right .22s ease}
+#bar,#main,#nav,#player,#recPlayer,#results{transition:right .22s ease}
 @media (min-width:900px) and (hover:hover) and (pointer:fine){
   #settings{left:auto;right:0;top:0;bottom:0;width:var(--settings-w);max-width:none;max-height:none;height:100vh;height:100dvh;margin:0;border-radius:18px 0 0 18px;transform:translateX(105%);padding-bottom:max(16px,env(safe-area-inset-bottom));box-shadow:-5px 0 24px rgba(0,0,0,.34)}
   #settings.show{transform:none}
   #settings .grab{display:none}
-  body.settingsOpen #bar,body.settingsOpen #main,body.settingsOpen #nav,body.settingsOpen #player,body.settingsOpen #results{right:var(--settings-w)}
+  body.settingsOpen #bar,body.settingsOpen #main,body.settingsOpen #nav,body.settingsOpen #player,body.settingsOpen #recPlayer,body.settingsOpen #results{right:var(--settings-w)}
   body.settingsOpen #chip{margin-left:calc(var(--settings-w)/-2)}
   #scrim.soft{display:none!important;pointer-events:none!important}
 }
@@ -765,9 +765,10 @@ body.noEnlarge #plBig+#plPause{margin-left:auto}
 /* v1.77: Next/Previous skip hidden pages; releasing Scroll Lock mid-song no longer scrolls; Enlarge also enlarges the song text; Follow along and note-window switches; Old hymn 88 words matched to the printed melody. */
 /* v1.78: chorus / refrain melodies added; Chorus check in the Melodies status summary; Hymn 172 highlight starts on the right words. */
 /* v1.79: Save button, Settings search, Start from here, Follow and Resume Auto-Scroll buttons, hidden-video recordings, optional secondary melodies, steadier word highlighting. */
+/* v1.90: loaded Old Hymns / Additional Christmas listed in the side index; bug, accessibility and phone fixes; 9 old-hymn melodies and 11 recordings added. */
 /* v1.76: Melody review settings moved to Extras; three-word fading playback highlight; settings Theme row removed (header switcher only); shorter revision entries. */
 #searchGo{flex:none;width:34px;height:34px;margin-left:-8px;border-radius:17px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
-#searchGo:hover,#searchGo:focus-visible{background:var(--surface);color:var(--text);outline:none}
+#searchGo:focus-visible{background:var(--surface);color:var(--text);outline:none}@media (hover:hover){#searchGo:hover{background:var(--surface);color:var(--text)}}
 #searchGo svg{width:20px;height:20px;fill:currentColor}
 @media (max-width:440px){#searchGo{width:30px}}
 @media (max-width:440px){#q{padding:0 2px 0 4px}#searchWrap{padding-right:3px}}   /* v1.74: a little more room for the search hint on phones */
@@ -1249,7 +1250,7 @@ body.noEnlarge #plBig+#plPause{margin-left:auto}
 
 <nav id="nav">
   <button class="icon-btn" id="prevBtn" aria-label="Previous page"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg></button>
-  <div id="pos" role="button" aria-label="Go to page"><b id="posMain"></b><span id="posSub"></span></div>
+  <div id="pos" role="button" tabindex="0" aria-label="Go to page"><b id="posMain"></b><span id="posSub"></span></div>
   <button class="icon-btn" id="nextBtn" aria-label="Next page"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
 </nav>
 
@@ -1304,7 +1305,7 @@ body.setSearchOff .setSearchRow,body.setSearchOff #setRes{display:none!important
 #settings.setFinding #setRes{display:block}
 #settings.setFinding>*:not(.setHead):not(#setRes){display:none!important}
 .sRes{display:block;width:100%;min-width:0;text-align:left;padding:9px 16px;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal}
-.sRes:hover,.sRes:focus-visible{background:var(--surface2)}
+@media (hover:hover){.sRes:hover{background:var(--surface2)}}.sRes:focus-visible{background:var(--surface2)}/* v1.90 fixes */html{-webkit-text-size-adjust:100%;text-size-adjust:100%}:root{color-scheme:dark}body.light{color-scheme:light}html.legacy{color-scheme:light}html.legacy.b-dark{color-scheme:dark}#toc,#settings{visibility:hidden;transition:transform .22s ease,visibility .22s}#toc.show,#settings.show{visibility:visible}#gotoDlg,#bkDlg,#candDlg,#dlDlg,#flagDlg{visibility:hidden}#gotoDlg.show,#bkDlg.show,#candDlg.show,#dlDlg.show,#flagDlg.show{visibility:visible}#bkDlg{transition:opacity .15s,transform .15s,visibility .15s}.sw input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}body.light .sw span{background:#8f8a80}body.light .sw input:checked+span{background:var(--accent)}#supBody h3,#supBody .hostNote a{color:var(--accent)}.b-sup h3{color:#8a5a00}.b-dark .b-sup h3{color:#d6b46a}body.light .dlMsg.err{color:#b3261e}body.light #recNote .recWarn,body.light #wakeStat.bad{color:#8a5200}#toc{padding-left:env(safe-area-inset-left)}#bar,#nav{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}@media (max-width:440px){#bar{padding-left:max(6px,env(safe-area-inset-left));padding-right:max(6px,env(safe-area-inset-right))}}#player,#recPlayer{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}#q{-webkit-appearance:none;appearance:none}#q::-webkit-search-cancel-button,#q::-webkit-search-decoration{-webkit-appearance:none;display:none}#searchWrap:focus-within{box-shadow:0 0 0 2px var(--accent)}.playBtn.off.hasRecording{opacity:1}@media (pointer:coarse){.playBtn,.favBtn,.lockBtn,.flagBtn,#plBig,#plPause,#plStop,#plSpeedDef,.miniReset,.tg .clr,.fsHead button{position:relative}.playBtn::after,.favBtn::after,.lockBtn::after,.flagBtn::after,#plBig::after,#plPause::after,#plStop::after,#plSpeedDef::after,.miniReset::after,.tg .clr::after,.fsHead button::after{content:"";position:absolute;left:0;right:0;top:-7px;bottom:-7px}.tr[data-k] .car{box-sizing:content-box;padding:12px;margin:-12px}}@media (min-width:900px) and (hover:hover) and (pointer:fine){#settings .setHead{border-radius:18px 0 0 0}}
 .sRes .st{display:block;font-weight:600;font-size:14px;line-height:1.3}
 .sRes .sp{display:block;color:var(--accent);font-size:11.5px;line-height:1.3;margin-top:1px}
 .sRes .ss{display:block;color:var(--muted);font-size:12.5px;line-height:1.3;margin-top:2px}
@@ -1375,7 +1376,7 @@ body.setSearchOff .setSearchRow,body.setSearchOff #setRes{display:none!important
 <div class="ssub">Look</div>
   <div class="srow"><div class="sl">Show previous hymn book numbers<small>The small number in parentheses</small></div><label class="sw"><input type="checkbox" id="optOld"><span></span></label></div>
 <div class="ssub">Hymns &amp; screen</div>
-  <div class="srow"><div class="sl">Show old hymns<small>Hymns from the previous hymn book that are not in this one. Added after the last page, with Save and Scroll Lock like the others, and included in search when on. Off by default.</small></div><label class="sw"><input type="checkbox" id="optShowOld" aria-label="Show old hymns"><span></span></label></div>
+  <div class="srow"><div class="sl">Show old hymns<small>Hymns from the previous hymn book that are not in this one. Added near the end of the book, with Save and Scroll Lock like the others, and included in search when on. Off by default.</small></div><label class="sw"><input type="checkbox" id="optShowOld" aria-label="Show old hymns"><span></span></label></div>
   <div class="srow"><div class="sl">Show Additional Christmas<small>A section after the Old Hymns that gathers every Christmas hymn in one place: the book’s own Christmas hymns and the old hymns’ Christmas songs (copied there), plus Angels We Have Heard on High and The First Noel. Included in search when on. Off by default; also loaded with the button on their page.</small></div><label class="sw"><input type="checkbox" id="optShowXmas" aria-label="Show Additional Christmas"><span></span></label></div>
   <div class="srow"><div class="sl">Keep screen on<small>While the app is open, and while a melody or recording plays (supported browsers).<span id="wakeStat"></span></small></div><label class="sw"><input type="checkbox" id="optWake"><span></span></label></div>
   
@@ -1442,7 +1443,7 @@ body.setSearchOff .setSearchRow,body.setSearchOff #setRes{display:none!important
 <div id="vsheet" role="dialog" aria-label="Verse options"><div class="vt" id="vsTitle"></div><div class="vx" id="vsText"></div><div class="vbtns"><button type="button" id="vsRead"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>Start from here</span></button><button type="button" id="vsClose"><svg viewBox="0 0 24 24"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg><span>Close</span></button></div></div>
 <button type="button" id="asResume" aria-label="Resume auto-scroll">Resume Auto-Scroll</button>
 <button type="button" id="melFollow" aria-label="Follow the melody: jump back to the place being sung"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 4v10.2l3.6-3.6L17 12l-5 5-5-5 1.4-1.4 3.6 3.6V4z"/><path d="M6 19h12v2H6z"/></svg>Follow</button>
-<div id="toast"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 <div id="srStatus" class="srOnly" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script>
@@ -1576,7 +1577,7 @@ function rebuildView(){
     if(p.l){const k=p.l.toLowerCase();if(labelPage[k]==null)labelPage[k]=i}
   });
 }
-function visNear(i){if(indexPageHidden(i))return i<FIRST_HYMN_PAGE?INDEX_GATE:(OLD_LOAD>=0?OLD_LOAD:FIRST_HYMN_PAGE);return i}
+function visNear(i){if(indexPageHidden(i))return i<FIRST_HYMN_PAGE?INDEX_GATE:(SPECIAL_431>=0?SPECIAL_431:OLD_LOAD>=0?OLD_LOAD:FIRST_HYMN_PAGE);return i}
 rebuildView();
 const OLD_LOAD=PAGES.findIndex(p=>p.ld),XMAS_LOAD=PAGES.findIndex(p=>p.ldx),XMN={},SPECIAL_431=PAGES.findIndex(p=>p.searchHidden&&p.l==="431"),OLDN={};PAGES.forEach((p,i)=>{if(p.o&&p.on&&OLDN[p.on]==null)OLDN[p.on]=i;if(p.x&&p.xn&&XMN[p.xn]==null)XMN[p.xn]=i});
 if(pgHid(cur))cur=(PAGES[cur]&&PAGES[cur].x&&XMAS_LOAD>=0)?XMAS_LOAD:OLD_LOAD>=0?OLD_LOAD:0;
@@ -1770,7 +1771,7 @@ function goXmasId(id){
 }
 function goOldId(id){
   if(!OLDH[id]){toast(id>1500?`Hymn ${id} not found (1\u2013${HYMNS.length})`:`Old hymn ${id-1000} not found`);return false}
-  if(!S.showOld){toast("Old hymns are off: turn on “Show old hymns” in Settings, or use “Load Old Hymns” on the last page");return false}
+  if(!S.showOld){toast("Old hymns are off: turn on “Show old hymns” in Settings, or use “Load Old Hymns” near the end of the book");return false}
   clearFilter(false);nav(OLDN[id-1000],id);addRecent(id);return true;
 }
 function goHymn(n){
@@ -1783,8 +1784,8 @@ function goHymn(n){
   clearFilter(false);REV.add(n);nav(pg,n);addRecent(n);return true;
 }
 function nav(i,hymn){if(flowOn())flowShow(i,0,hymn,true);else show(i,0,hymn)}
-function goPage(i){if(pgHid(i)){toast(`Page not found (pages 1\u2013${lastArabic}, 431, or iii\u2013xvii)`);return false}clearFilter(false);nav(i);return true}
-function goOld(o){const n=oldToNew[String(o)];if(n==null){if(OLDN[o]!=null){if(!S.showOld){toast(`Old hymn ${o} is in the old hymns: turn on “Show old hymns” in Settings, or use the last page`);return false}return goOldId(1000+o)}toast(`Old hymn ${o} is not in this book`);return false}toast(`Old ${o} → Hymn ${n}`);return goHymn(n)}
+function goPage(i){if(indexPageHidden(i)){clearFilter(false);nav(INDEX_GATE);toast("Contents and indices are hidden");return true}if(pgHid(i)){toast(`Page not found (pages 1\u2013${lastArabic}, 431, or iii\u2013xvii)`);return false}clearFilter(false);nav(i);return true}
+function goOld(o){const n=oldToNew[String(o)];if(n==null){if(OLDN[o]!=null){if(!S.showOld){toast(`Old hymn ${o} is in the old hymns: turn on “Show old hymns” in Settings, or use “Load Old Hymns” near the end of the book`);return false}return goOldId(1000+o)}toast(`Old hymn ${o} is not in this book`);return false}toast(`Old ${o} → Hymn ${n}`);return goHymn(n)}
 function pageIndexFromLabel(v){v=String(v).trim().toLowerCase().replace(/^p(age|g)?\.?\s*/,"");return v&&labelPage[v]!=null?labelPage[v]:null}
 function askOldPage(){
   if(!(OLD_LOAD>=0)||!oldCount())return false;
@@ -1896,7 +1897,7 @@ function sxRun(q){
     const lists=[];let mw=0;
     for(let i=0;i<qw.length;i++){const a=per[i].get(id);if(a){lists.push([i,a]);mw+=wt[i]}}
     if(mw<tw*.5)return;
-    if(!S.idxSearch&&isIdxPage(PAGES[u.p]))return;   /* v1.72: never surface an index result unless explicitly enabled */
+    if(isIdxPage(PAGES[u.p])&&(!S.idxSearch||indexPageHidden(u.p)))return;   /* v1.72: never surface an index result unless explicitly enabled */
     const seed=lists.slice().sort((a,b)=>a[1].length-b[1].length)[0];
     let best=null;
     for(let s0=0;s0<seed[1].length;s0++){
@@ -1947,7 +1948,7 @@ function sxLegacy(q,onlyIdx){
   });
   return res;
 }
-function sxKey(q){return norm(q)+"|"+(S.showOld?1:0)+(S.showXmas?1:0)+"|"+(S.idxSearch?1:0)}
+function sxKey(q){return norm(q)+"|"+(S.showOld?1:0)+(S.showXmas?1:0)+"|"+(S.idxSearch?1:0)+(S.showIndices?1:0)}
 function sxGet(q){const k=sxKey(q);if(SX.cache&&SX.cache.key===k)return SX.cache.out;const out=sxRun(q);SX.cache={key:k,out:out};return out}
 let sxT=0;
 function sxPrep(v){   /* quietly, while typing: build the index once and keep the answer ready; nothing on screen changes */
@@ -2129,9 +2130,13 @@ $("#pageCard").addEventListener("click",e=>{const aks=e.target.closest("[data-ac
 $("#prevBtn").onclick=()=>step(-1);$("#nextBtn").onclick=()=>step(1);
 document.addEventListener("keydown",e=>{
   if(document.body.classList.contains("ovOpen")){if(e.key==="Escape")ovClose();return}
-  if(e.target.tagName==="INPUT"){if(e.key==="Escape"&&!e.target.classList.contains("pnumIn")){e.target.blur();closeAll()}return}
+  const t=e.target,tn=t.tagName;
+  if(tn==="INPUT"){if(e.key==="Escape"&&!t.classList.contains("pnumIn")){t.blur();closeAll()}return}
+  if(tn==="TEXTAREA"||tn==="SELECT"||t.isContentEditable)return;   /* v1.90: typing in a note or changing a drop-down never turns pages */
   if(e.key==="Escape"){closeAll();return}
-  if(e.key===" "&&PL&&!$("#scrim").classList.contains("show")){e.preventDefault();pauseMel();return}
+  if(e.altKey||e.ctrlKey||e.metaKey)return;
+  if(document.querySelector("#bkDlg.show,#flagDlg.show,#candDlg.show,#supPanel.show"))return;
+  if(e.key===" "&&PL&&!$("#scrim").classList.contains("show")&&!(t.closest&&t.closest("button,a,summary"))){e.preventDefault();pauseMel();return}
   if($("#scrim").classList.contains("show")||$("#results").classList.contains("show"))return;
   if(e.key==="ArrowRight"||(e.key==="PageDown"&&!flowOn()))step(1);
   else if(e.key==="ArrowLeft"||(e.key==="PageUp"&&!flowOn()))step(-1);
@@ -2150,7 +2155,7 @@ sc.addEventListener("touchend",e=>{if(!tracking)return;tracking=false;if(flowOn(
   if(!$("#scrim").classList.contains("show")&&Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.6&&Date.now()-st<700)step(dx<0?1:-1)},{passive:true});
 
 function setIndices(on){
-  S.showIndices=!!on;if(!on&&indexPageHidden(cur))cur=cur<FIRST_HYMN_PAGE?INDEX_GATE:(OLD_LOAD>=0?OLD_LOAD:FIRST_HYMN_PAGE);rebuildView();applySettings();show(cur,0);toast(on?"Contents and indices shown":"Contents and indices hidden")
+  S.showIndices=!!on;if(!on&&indexPageHidden(cur))cur=cur<FIRST_HYMN_PAGE?INDEX_GATE:(SPECIAL_431>=0?SPECIAL_431:OLD_LOAD>=0?OLD_LOAD:FIRST_HYMN_PAGE);rebuildView();applySettings();show(cur,0);toast(on?"Contents and indices shown":"Contents and indices hidden")
 }
 
 /* ---------- TOC ---------- */
@@ -2173,11 +2178,18 @@ function buildToc(){
   }
   /* v1.74: the Title Page sits on its own above the collapsible "All hymns & sections" group */
   let top="";tocData().forEach(n=>{if(!top&&+n.p===0&&!(n.c&&n.c.length)&&!(n.hy&&n.hy.length)){top=`<div class="ts tsTop">${node(n,1)}</div>`;return}h+=`<div class="ts">${node(n,1)}</div>`});
+  /* v1.90: the Old Hymns and Additional Christmas sections are listed here while they are loaded (and only then) */
+  [[S.showOld,"Old Hymns",OLD_LOAD,OLDH,1000],[S.showXmas,"Additional Christmas",XMAS_LOAD,XMH,2000]].forEach(a=>{
+    if(!a[0]||a[2]<0)return;const ids=Object.keys(a[3]).map(Number).sort((x,y)=>x-y);if(!ids.length)return;const myid="t"+(id++);
+    h+=`<div class="ts"><button class="tr l1" data-p="${a[2]}" data-k="${myid}"><span class="lab">${a[1]}</span><span class="pp">${ids.length}</span>${CAR}</button><div class="kids" id="${myid}">`+ids.map(x=>{let t=(a[3][x]||[""])[0]||"";const m=t.match(/^.{12,60}?[,;.:](?=\s)/);t=m?m[0].slice(0,-1):(t.length>46?t.slice(0,46)+"…":t);return`<button class="tr hyrow" data-h="${x}"><span class="hnum">${x-a[4]}</span><span class="lab">${esc(t)}</span></button>`}).join("")+`</div></div>`});
+  TOC_SIG=tocSig();
   $("#tocBody").innerHTML='<div id="tocMine"></div>'+top+'<div class="tocAllHead"><button type="button" class="tocAllToggle" id="tocAllToggle" aria-expanded="false"><svg class="car" viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg><span>All hymns &amp; sections</span></button></div><div id="tocAll">'+h+'</div>';syncTocAll();
 }
+let TOC_SIG="";function tocSig(){return(S.showOld?"o":"")+(S.showXmas?"x":"")}
+function tocRefresh(){if(TOC_SIG!==tocSig()){buildToc();renderMine()}}   /* rebuild the index when a section is loaded or hidden */
 function syncTocAll(){const all=$("#tocAll"),tog=$("#tocAllToggle"),lock=$("#tocAllLock");if(all)all.classList.toggle("show",!!S.tocAllOpen);if(tog)tog.setAttribute("aria-expanded",S.tocAllOpen?"true":"false");if(lock){lock.classList.toggle("on",!!S.tocAllLocked);lock.setAttribute("aria-pressed",S.tocAllLocked?"true":"false");lock.title=S.tocAllLocked?"Unlock: collapse this group whenever the panel opens":"Lock: keep this group "+(S.tocAllOpen?"open":"closed")}}
 $("#tocBody").addEventListener("click",e=>{
-  if(e.target.closest("#clrFav")){FAV=[];saveLists();renderMine();return}
+  if(e.target.closest("#clrFav")){FAV=FAV.filter(n=>!(n<1000||(S.showOld&&OLDH[n])||(S.showXmas&&XMH[n])));saveLists();renderMine();return}
   if(e.target.closest("#clrRec")){REC=[];saveLists();renderMine();return}
   if(e.target.closest("#tocAllToggle")){S.tocAllOpen=!S.tocAllOpen;syncTocAll();if(S.tocAllLocked)applySettings();return}
   const b=e.target.closest(".tr");if(!b)return;
@@ -2202,7 +2214,7 @@ function renderMine(){
   $("#tocMine").innerHTML=h;
 }
 function openToc(){
-  if(!S.tocAllLocked)S.tocAllOpen=false;renderMine();syncTocAll();
+  tocRefresh();if(!S.tocAllLocked)S.tocAllOpen=false;renderMine();syncTocAll();
   $("#toc").classList.add("show");$("#scrim").classList.add("show");
   markTocCurrent();
   // reveal the current hymn/section only when the full hierarchy is open.
@@ -4440,10 +4452,10 @@ function setShowXmas(on,go){
   if(!on&&LOCK&&(LOCK.h>2000||(LOCK.s!=null&&SECT[LOCK.s]&&SECT[LOCK.s].t==="Additional Christmas")))LOCK=null;
   if(!on&&PL&&PL.n>2000)stopMel();
   if(!on&&REC_N>2000)closeRec();
-  const q=$("#q").value.trim();
+  const q=$("#q").value.trim()||(filter?lastQ:"");
   if(!on&&PAGES[cur]&&PAGES[cur].x)cur=XMAS_LOAD;
-  applySettings();renderMine();
-  if(q&&filter)doSearch($("#q").value,true);else show(cur,0);
+  applySettings();tocRefresh();renderMine();
+  if(q&&filter)doSearch(q,true);else show(cur,0);
   if(on&&go&&XMAS_LOAD>=0&&PAGES[XMAS_LOAD+1]){nav(XMAS_LOAD+1);toast(`Additional Christmas loaded: ${xmasCount()} hymns`)}
 }
 /* favorites and recents may hold old hymns: read them again now that the old hymns are known */
@@ -4460,11 +4472,13 @@ function oldLoadHtml(){
 }
 function setShowOld(on,go){
   S.showOld=!!on;rebuildView();
-  if(!on&&LOCK&&(LOCK.h>1000||(LOCK.s!=null&&SECT[LOCK.s]&&SECT[LOCK.s].t==="Old Hymns")))LOCK=null;   /* a lock inside the old hymns ends when they are switched off */
-  const q=$("#q").value.trim();
+  if(!on&&LOCK&&((LOCK.h>1000&&LOCK.h<2000)||(LOCK.s!=null&&SECT[LOCK.s]&&SECT[LOCK.s].t==="Old Hymns")))LOCK=null;
+  if(!on&&PL&&PL.n>1000&&PL.n<2000)stopMel();   /* v1.90: playback of a hidden old hymn stops with it */
+  if(!on&&REC_N>1000&&REC_N<2000)closeRec();   /* a lock inside the old hymns ends when they are switched off */
+  const q=$("#q").value.trim()||(filter?lastQ:"");
   if(!on&&PAGES[cur]&&PAGES[cur].o)cur=OLD_LOAD;
-  applySettings();
-  if(q&&filter)doSearch($("#q").value,true);else show(cur,0);
+  applySettings();tocRefresh();
+  if(q&&filter)doSearch(q,true);else show(cur,0);
   if(on&&go&&OLD_LOAD>=0&&PAGES[OLD_LOAD+1]){nav(OLD_LOAD+1);toast(`${oldCount()} old hymns loaded`)}
 }
 
@@ -4592,7 +4606,7 @@ function playMel(n,noticeOk,v,startV){
   $("#plWords").textContent=S.melIntro?"Starting note…":"";$("#plLine").textContent="";
   const fol=S.melFollow!==false,win=fol&&S.melWin!==false;   /* v1.77: follow along / note window can be turned off in Settings */
   if(win){$("#player").classList.add("show");document.body.classList.add("playing");if(wideOn()&&!PLBIG){WIDE_BIG_AUTO=true;PLBIG=Math.min(72,Math.round(plBase()*2));plApply()}else sizePlayer()}
-  else $("#player").classList.remove("show");
+  else{$("#player").classList.remove("show");document.body.classList.remove("playing")}
   playbackLock(n);if(fol)startMelAutoScroll(n);syncSpeedUI();refreshPlayBtns();schedule();tick();accessSay(`${hlab(n)} melody playing`);
 }
 function stopMel(quiet){
@@ -5060,7 +5074,7 @@ $("#optMelSizeLink").onchange=e=>{S.melSizeLinked=e.target.checked;applySettings
 $("#plSpeed").oninput=e=>setSongSpeed(e.target.value);
 $("#plSpeedDef").onclick=useDefaultSpeed;
 $("#plPause").onclick=pauseMel;
-function resetDefaults(all){stopMel();closeRec();accessCancelSpeech();try{localStorage.removeItem("hbs.accessPrev")}catch(e){}S=Object.assign({},DEF,{melSpeeds:{}});if(all){FAV=[];REC=[];saveLists()}rebuildView();if(PAGES[cur]&&PAGES[cur].o)cur=OLD_LOAD;if(PAGES[cur]&&PAGES[cur].x)cur=XMAS_LOAD;applySettings();renderMine();show(cur,0);toast(all?"Settings reset; Saved hymns and Recents deleted":"Settings reset to defaults")}
+function resetDefaults(all){stopMel();closeRec();accessCancelSpeech();try{localStorage.removeItem("hbs.accessPrev")}catch(e){}S=Object.assign({},DEF,{melSpeeds:{}});if(all){FAV=[];REC=[];saveLists()}clearFilter(false);$("#q").value="";$("#clearQ").classList.remove("show");rebuildView();if(PAGES[cur]&&PAGES[cur].o)cur=OLD_LOAD;if(PAGES[cur]&&PAGES[cur].x)cur=XMAS_LOAD;applySettings();renderMine();show(cur,0);toast(all?"Settings reset; Saved hymns and Recents deleted":"Settings reset to defaults")}
 /* v1.74: Reset asks first: Reset Settings (Favorites and Recents are kept) or Reset All (also deletes Favorites and Recents) */
 $("#resetSet").onclick=()=>{
   bkOpen("Reset?",'<p>Choose what to reset. This cannot be undone (a Backup first keeps a copy).</p><div class="rsBtns"><button type="button" class="btn ghost" id="rsSettings">Reset Settings<small>Every setting back to its default. Saved hymns and Recents are kept.</small></button><button type="button" class="btn ghost" id="rsAll">Reset All<small>Settings back to default, and all Saved hymns and Recents deleted.</small></button></div>',"Cancel",null,true);
@@ -5159,7 +5173,7 @@ window.addEventListener("hashchange",fromHash);
 
 
 /* ---------- backup / restore settings ---------- */
-const APP_NAME="Hymnal_v1.81",APP_VER="1.81",BK_FORMAT=1,BK_SCHEMA="29";
+const APP_NAME="Hymnal_v1.90",APP_VER="1.90",BK_FORMAT=1,BK_SCHEMA="29";
 try{document.title="Hymn Book"}catch(e){}   /* v1.79: the browser tab shows no version number */
 const BK_RULES=(function(){
   const num=(lo,hi,int)=>v=>{if(typeof v==="string"&&v.trim()!=="")v=+v;if(typeof v!=="number"||!isFinite(v)||v<lo||v>hi)return undefined;return int?Math.round(v):Math.round(v*100)/100};
@@ -5259,6 +5273,7 @@ function bkApply(r){
   if(r.general!=null){GENERAL_FLAG=r.general;saveGeneralFlag()}
   saveLists();
   if(r.basic){try{const cur0=JSON.parse(localStorage.getItem("hbs.basic")||"{}")||{};localStorage.setItem("hbs.basic",JSON.stringify(Object.assign(cur0,r.basic)))}catch(e){}}
+  clearFilter(false);$("#q").value="";$("#clearQ").classList.remove("show");
   rebuildView();if(PAGES[cur]&&PAGES[cur].o&&!S.showOld)cur=OLD_LOAD;if(PAGES[cur]&&PAGES[cur].x&&!S.showXmas)cur=XMAS_LOAD;if(S.offline)closeRec();applySettings();renderMine();show(cur,0);
   toast("Settings restored");
 }
@@ -5386,7 +5401,8 @@ const MEL_AUTO={on:false,n:0,drag:false,x:0,y:0};
 function startMelAutoScroll(n){MEL_AUTO.on=true;MEL_AUTO.n=n;MEL_AUTO.drag=false;requestAnimationFrame(function(){if(MEL_AUTO.on&&PL&&PL.n===n){const sc=$("#scroller");sc.scrollTop=0;flowBar()}})}
 function stopMelAutoScroll(){MEL_AUTO.on=false;MEL_AUTO.n=0;MEL_AUTO.drag=false}
 function melAutoScroll(beat){if(!MEL_AUTO.on||!PL||PL.n!==MEL_AUTO.n||!flowOn()||!LOCK||LOCK.h!==PL.n)return;   /* v1.77: auto-scroll only follows while the playing hymn is the locked view; with the lock released the view stays where it is */
-  const sc=$("#scroller"),max=Math.max(0,sc.scrollHeight-sc.clientHeight);if(max<=0)return;const p=Math.max(0,Math.min(1,beat/Math.max(1,PL.totalB))),target=max*p;if(Math.abs(sc.scrollTop-target)>.25)sc.scrollTop=target}
+  const sc=$("#scroller"),max=Math.max(0,sc.scrollHeight-sc.clientHeight);if(max<=0)return;const nv=(hymnVerses[PL.n]||[]).length||1;let p=Math.max(0,Math.min(1,beat/Math.max(1,PL.totalB)));if(nv>1&&!S.melAll)p=((PL.startV||0)+p)/nv;   /* v1.90: one verse playing scrolls through that verse only */
+  const target=max*p;if(Math.abs(sc.scrollTop-target)>.25)sc.scrollTop=target}
 function melWatch(){return !!PL&&!PL.paused&&S.melFollow!==false&&!!LOCK&&LOCK.h===PL.n}
 function manualMelScroll(){if(!melWatch())return;MEL_AUTO.on=false;MEL_AUTO.drag=false;showResumeAS()}
 /* v1.79: a touch or scroll by hand stops auto-scroll; a 3-second "Resume Auto-Scroll" button appears above the stanza being sung. Pause then Resume also starts auto-scroll again. */
@@ -5468,7 +5484,7 @@ function flowSetHidden(){
 }
 /* the page under the top edge of the reading area */
 function flowCurrent(){
-  if(!FLOWVIS.length)return cur;
+  if(!FLOWVIS.length||!document.body.contains(FLOWVIS[0]))return cur;   /* v1.90: a no-match search replaces the pages; keep the place */
   const y=$("#scroller").getBoundingClientRect().top+34;
   let lo=0,hi=FLOWVIS.length-1;
   while(lo<hi){const mid=(lo+hi+1)>>1;if(FLOWVIS[mid].getBoundingClientRect().top<=y)lo=mid;else hi=mid-1}
@@ -5624,7 +5640,7 @@ function ovShow(id){ovClose();$("#"+id).classList.add("show");document.body.clas
    v1.81 is rolled into the 1.80 entry (no separate entry): Lord's Prayer page moved before the Old Hymns; Melody 1 and 2 swapped for 26 hymns so the plain singing form plays first.
    Full 1.80 notes: Settings search now waits for Enter (or the magnifier) before showing results, like the main search. New switch to show the word highlight on the few rough-fit melodies (off by default). Melody 1 is again the tune named in the book for hymns 4, 30 and 274. Melody 2 now means another form of the same tune (plain hymnal forms of Bach chorales, original rhythms): 31 hymns and 4 old hymns have one. The different tunes that used to be Melody 2 moved to a new Alternative melodies switch in Extras (off by default). New Additional Christmas section after the Old Hymns, loaded with its own button and left out of search until then: every Christmas hymn from the book and the old hymns (30 copied in one place) plus Angels We Have Heard on High and The First Noel, with melodies and recordings. Mobile fixes.
    Full 1.79 notes: Settings has a search bar and a Done button; Backup, Restore and Reset are yellow; Readable font matches the KJV app. “Add to favorites” is now Save / Saved (same list; can be turned off in Extras). Verse tap → Start from here; a Follow button returns you to the melody; a Resume Auto-Scroll pop-up appears when you scroll by hand, and Pause then Resume restarts auto-scroll. Recordings play as sound only (video hidden) and are offered for uncertain melodies by default. Secondary melodies are hidden by default (Show secondary melodies) and 113 hymns now have one. Enlarge can be hidden and enlarges only the player unless linked to the song text; Normal restores your size. Text-size changes keep the middle verse in place. Searching “old songs” offers to show them; the search box clears 5 seconds after a result is chosen. Highlight fixes for hymns 164, 172, 264 and 290; the browser tab shows no version number; the Christmas check was replaced by Secondary melodies and Extra notes checks. */
-const REVS=[{"v": "1.80", "d": "11.26.2026", "t": "Settings search waits for Enter. Melody 2 is now only another form of the same tune; other tunes moved to Alternative melodies (Extras). New Additional Christmas section at the end of the book. Mobile fixes."}, {"v": "1.79", "d": "11.23.2026", "t": "Settings search and Done button; Save replaces Add to favorites; Start from here, Follow and Resume Auto-Scroll; recordings play as sound only; optional secondary melodies; highlight fixes."}, {"v": "1.78", "d": "11.20.2026", "t": "Choruses and refrains are now sung (Old hymn 88 and six more old hymns); new Chorus check in the Melodies summary. Hymn 172's highlight no longer runs ahead."}, {"v": "1.77", "d": "11.20.2026", "t": "Fixed page flipping stopping at the hidden-index page and Scroll Lock jumping away mid-song. Enlarge also enlarges the song text. New follow-along and note-window switches."}, {"v": "1.76", "d": "11.20.2026", "t": "Playback highlight lights three words at a time and slides smoothly. Show melody notes and Melody review moved to Extras. Settings Theme row removed; shorter notes."}, {"v": "1.75", "d": "11.20.2026", "t": "Fixed searches getting stuck during playback. More second melodies and old-hymn melodies; better recording links. New Extras menu, color-blind mode and Readable font."}, {"v": "1.74", "d": "11.19.2026", "t": "Melodies for 5 hymns and 71 old hymns; uncertain melodies checked; dead recording links replaced. Settings split into sub-groups with Collapse all."}, {"v": "1.73", "d": "11.15.2026", "t": "Added legacy page 431 (The Lord's Prayer and the Blessing), reachable by p431 or “Lord's Prayer”. Optional Flip phone / blind mode."}, {"v": "1.72", "d": "11.13.2026", "t": "Added a saved Pop-up notifications switch. Search now leaves out index pages by default, while tune names and other metadata still go straight to the song."}, {"v": "1.71", "d": "11.13.2026", "t": "Removed Widen-mode flicker; Widen now refits only when width, content or font size actually change."}, {"v": "1.70", "d": "11.13.2026", "t": "Widen raises text to a 27 px target and fits each verse on one line where readable; the melody player widens too. Reverted the softened transition after ‘jasper sea’ in Hymn 250."}, {"v": "1.69", "d": "11.13.2026", "t": "Added a Widen control for large screens and made the magnifying glass a real Search button. Slur markers now join notes smoothly; fixed the Hymn 250 transition after ‘jasper sea’."}, {"v": "1.68", "d": "11.13.2026", "t": "Audited Hymn 250 and the melody catalog. One-time notices before playback. Contents and index pages hidden behind one button; Favorites has a Clear button."}, {"v": "1.67", "d": "11.12.2026", "t": "Navigating to another song during playback now jumps instantly while playback continues. Added a theme switcher beside Settings. The search hint always reads Search number or words."}, {"v": "1.66", "d": "11.12.2026", "t": "The first text search shows a one-time note about what search is for. The playing-verse highlight is lighter and fades more gradually."}, {"v": "1.65", "d": "11.12.2026", "t": "The verse or paragraph being sung is highlighted in the body text during melody playback. Backup files are named Hymnal_v1.65 Settings (date).json."}, {"v": "1.64", "d": "11.12.2026", "t": "Added a general update flag on the Title Page for Developer flags. The grey Play melody button offers the recording when only a recording exists. The locked song scrolls in sync with playback."}, {"v": "1.63", "d": "11.11.2026", "t": "Playback now turns on Scroll mode and Scroll Lock for the playing hymn. Added Developer song flags (off by default), exported with Backup for AI implementation."}, {"v": "1.62", "d": "11.11.2026", "t": "Added a Detailed summary report next to Show melody notes. Eased the default melody speed for faster tunes. On desktop, Settings is a persistent right-side tab."}, {"v": "1.61", "d": "11.11.2026", "t": "Settings groups wait 3 seconds before collapsing. Recording buttons refresh in place. Cleaned up recording links for Hymns 54, 165, 174 and 266."}, {"v": "1.60", "d": "11.11.2026", "t": "New search: nothing moves while you type; Enter opens a close match or suggestions. Recordings off by default, shown beside Play melody. More recording links."}, {"v": "1.59", "d": "11.11.2026", "t": "Recording window now keeps the hymn book from showing inside it. 266 more hymns have recording links with secondaries; Hymn 200 now has the FOUNDATION tune."}, {"v": "1.58", "d": "11.10.2026", "t": "Fixed Scroll Lock release, the page 317 old-song offer and YouTube error 153 (added an Other player button). Added an Enlarge button for the melody player and many more recording links."}, {"v": "1.57", "d": "11.9.2026", "t": "On the GitHub site, a pop-up offers View Online or Offline Download; Offline Download saves the latest “Hosted” file."}, {"v": "1.56", "d": "11.9.2026", "t": "Old hymn 91 (Greensleeves) has a melody; old hymns 97, 271 and 351 have candidate melodies. Slurs can now be written into a tune. The hosting link has no % characters."}, {"v": "1.55", "d": "11.9.2026", "t": "Old hymns now have Scroll Lock and Favorites buttons. More recording links; melodies for old hymns 197 and 277. Syllable counting handles ä, ö, å and Finnish words."}, {"v": "1.54", "d": "11.9.2026", "t": "Word search goes straight to the song. Added secondary recording links, a Fully offline switch and a Revision page. 127 old hymns added, hidden until loaded."}, {"v": "1.53", "d": "11.9.2026", "t": "Full-screen button shows a minimize icon. Searched words flash. The melody filter no longer hides songs when all three switches are on or off. Melody word-sync rewritten; recordings play inside the app."}];
+const REVS=[{"v": "1.90", "d": "11.27.2026", "t": "Old Hymns and Additional Christmas appear in the side index while loaded. Melodies for 9 more old hymns, recordings for 11 more hymns. Many small fixes for phones, keyboards, screen readers and the Light theme."}, {"v": "1.80", "d": "11.26.2026", "t": "Settings search waits for Enter. Melody 2 is now only another form of the same tune; other tunes moved to Alternative melodies (Extras). New Additional Christmas section at the end of the book. Mobile fixes."}, {"v": "1.79", "d": "11.23.2026", "t": "Settings search and Done button; Save replaces Add to favorites; Start from here, Follow and Resume Auto-Scroll; recordings play as sound only; optional secondary melodies; highlight fixes."}, {"v": "1.78", "d": "11.20.2026", "t": "Choruses and refrains are now sung (Old hymn 88 and six more old hymns); new Chorus check in the Melodies summary. Hymn 172's highlight no longer runs ahead."}, {"v": "1.77", "d": "11.20.2026", "t": "Fixed page flipping stopping at the hidden-index page and Scroll Lock jumping away mid-song. Enlarge also enlarges the song text. New follow-along and note-window switches."}, {"v": "1.76", "d": "11.20.2026", "t": "Playback highlight lights three words at a time and slides smoothly. Show melody notes and Melody review moved to Extras. Settings Theme row removed; shorter notes."}, {"v": "1.75", "d": "11.20.2026", "t": "Fixed searches getting stuck during playback. More second melodies and old-hymn melodies; better recording links. New Extras menu, color-blind mode and Readable font."}, {"v": "1.74", "d": "11.19.2026", "t": "Melodies for 5 hymns and 71 old hymns; uncertain melodies checked; dead recording links replaced. Settings split into sub-groups with Collapse all."}, {"v": "1.73", "d": "11.15.2026", "t": "Added legacy page 431 (The Lord's Prayer and the Blessing), reachable by p431 or “Lord's Prayer”. Optional Flip phone / blind mode."}, {"v": "1.72", "d": "11.13.2026", "t": "Added a saved Pop-up notifications switch. Search now leaves out index pages by default, while tune names and other metadata still go straight to the song."}, {"v": "1.71", "d": "11.13.2026", "t": "Removed Widen-mode flicker; Widen now refits only when width, content or font size actually change."}, {"v": "1.70", "d": "11.13.2026", "t": "Widen raises text to a 27 px target and fits each verse on one line where readable; the melody player widens too. Reverted the softened transition after ‘jasper sea’ in Hymn 250."}, {"v": "1.69", "d": "11.13.2026", "t": "Added a Widen control for large screens and made the magnifying glass a real Search button. Slur markers now join notes smoothly; fixed the Hymn 250 transition after ‘jasper sea’."}, {"v": "1.68", "d": "11.13.2026", "t": "Audited Hymn 250 and the melody catalog. One-time notices before playback. Contents and index pages hidden behind one button; Favorites has a Clear button."}, {"v": "1.67", "d": "11.12.2026", "t": "Navigating to another song during playback now jumps instantly while playback continues. Added a theme switcher beside Settings. The search hint always reads Search number or words."}, {"v": "1.66", "d": "11.12.2026", "t": "The first text search shows a one-time note about what search is for. The playing-verse highlight is lighter and fades more gradually."}, {"v": "1.65", "d": "11.12.2026", "t": "The verse or paragraph being sung is highlighted in the body text during melody playback. Backup files are named Hymnal_v1.65 Settings (date).json."}, {"v": "1.64", "d": "11.12.2026", "t": "Added a general update flag on the Title Page for Developer flags. The grey Play melody button offers the recording when only a recording exists. The locked song scrolls in sync with playback."}, {"v": "1.63", "d": "11.11.2026", "t": "Playback now turns on Scroll mode and Scroll Lock for the playing hymn. Added Developer song flags (off by default), exported with Backup for AI implementation."}, {"v": "1.62", "d": "11.11.2026", "t": "Added a Detailed summary report next to Show melody notes. Eased the default melody speed for faster tunes. On desktop, Settings is a persistent right-side tab."}, {"v": "1.61", "d": "11.11.2026", "t": "Settings groups wait 3 seconds before collapsing. Recording buttons refresh in place. Cleaned up recording links for Hymns 54, 165, 174 and 266."}, {"v": "1.60", "d": "11.11.2026", "t": "New search: nothing moves while you type; Enter opens a close match or suggestions. Recordings off by default, shown beside Play melody. More recording links."}, {"v": "1.59", "d": "11.11.2026", "t": "Recording window now keeps the hymn book from showing inside it. 266 more hymns have recording links with secondaries; Hymn 200 now has the FOUNDATION tune."}, {"v": "1.58", "d": "11.10.2026", "t": "Fixed Scroll Lock release, the page 317 old-song offer and YouTube error 153 (added an Other player button). Added an Enlarge button for the melody player and many more recording links."}, {"v": "1.57", "d": "11.9.2026", "t": "On the GitHub site, a pop-up offers View Online or Offline Download; Offline Download saves the latest “Hosted” file."}, {"v": "1.56", "d": "11.9.2026", "t": "Old hymn 91 (Greensleeves) has a melody; old hymns 97, 271 and 351 have candidate melodies. Slurs can now be written into a tune. The hosting link has no % characters."}, {"v": "1.55", "d": "11.9.2026", "t": "Old hymns now have Scroll Lock and Favorites buttons. More recording links; melodies for old hymns 197 and 277. Syllable counting handles ä, ö, å and Finnish words."}, {"v": "1.54", "d": "11.9.2026", "t": "Word search goes straight to the song. Added secondary recording links, a Fully offline switch and a Revision page. 127 old hymns added, hidden until loaded."}, {"v": "1.53", "d": "11.9.2026", "t": "Full-screen button shows a minimize icon. Searched words flash. The melody filter no longer hides songs when all three switches are on or off. Melody word-sync rewritten; recordings play inside the app."}];
 function revOpen(){
   $("#revBody").innerHTML=REVS.map(r=>`<div class="rev"><h3>Revision ${esc(r.v)} <small>${esc(r.d)}</small></h3><p>${esc(r.t)}</p></div>`).join("");
   ovShow("revView");$("#revBody").scrollTop=0;
@@ -6195,6 +6211,35 @@ RECS["2007"]={"p":"Chb8jk9BO3Q","s":"T3a1duZgSkQ","n":"Tune: Gloria. Piano with 
 RECS["2009"]={"p":"sI3FIObQqII","s":"6Y8PrTtzdP8","n":"Tune: The First Noel. A plain hymn version with the words is primary; a congregation singing is secondary.","a":"The First Noel - Hymn (Lyrics and Music)","b":"The First Noel \u2022 Congregational"};
 {const a=document.getElementById("mel2List");if(a)delete a.dataset.done;const b=document.getElementById("melAltList");if(b)delete b.dataset.done}
 /*V180DATA-END*/
+/*V190DATA-START*/
+/* ---------- v1.90 data: old-hymn melodies from the Finnish chorale books (koraali.fi, public domain) and newly found plain recordings ---------- */
+MEL["ota jesus paimen hyva"]={"c": 1, "bpm": 88, "src": "OTA, JESUS, PAIMEN HYVA (Faltin chorale book melody 260, isometric b-form). https://koraali.fi/pdf/F260b.pdf - koraali.fi (the site states all its content is public domain; MuseScore-engraved PDF of the chorale setting; soprano voice extracted programmatically from the PDF glyph positions and checked against the rendered page). From the chorale book to the 1886 Finnish hymnal; public domain. C minor, 2/4, all quarter notes. A rhythmic a-form (dotted rhythms, same melody) is at https://koraali.fi/pdf/F260a.pdf. Plain congregational (singing) form.", "l": ["G4 C4 Ab4 G4 F4 Bb4 G4 Eb4", "Eb5 D5 C5 D5 C5 B4 C5/2", "G4 C4 Ab4 G4 F4 Bb4 G4 Eb4", "Eb5 D5 C5 D5 C5 B4 C5/2", "Eb5 Bb4 C5 G4 Ab4 G4 F4 F4", "Bb4 G4 C5 D5 B4 C5 D5 G4", "G4 G4 Ab4 G4 F4 F4 G4/2", "Eb5 D5 C5 D5 C5 B4 C5/2"]};
+hymnTune[1342]="Ota, Jesus, Paimen Hyvä";OLDMEL[1342]={"c": 1, "src": "Old hymn 342 is word for word hymn 134 of the Finnish hymnal of 1886 ('Ota, Jesus, paimen hyva', S. von Birken) - https://koraali.fi/1886/134.html - which gives exactly this melody (F260a / F260b) for it. Metre 8.7.8.7.8.8.7.7; first two phrases repeated (repeat sign)."};
+MEL["sinua jumala lagi"]={"c": 0, "bpm": 92, "src": "SINUA, JUMALA (Rudolf Lagi 1866; Faltin chorale book melody 308). https://koraali.fi/pdf/F308.pdf - koraali.fi (the site states all its content is public domain; MuseScore-engraved PDF of the chorale setting; soprano voice extracted programmatically from the PDF glyph positions and checked against the rendered page). Lagi died 1868; public domain. Eb major, 2/4, all quarter notes. Plain congregational (singing) form.", "l": ["Eb4 G4 Ab4 Bb4 C5 Bb4", "Eb5 D5 Bb4 C5 C5 Bb4", "Bb4 C5 D5 Eb5 C5 Bb4", "G4 Ab4 G4 F4 F4 Eb4", "Eb4 G4 Ab4 Bb4 C5 Bb4", "Eb5 D5 Bb4 C5 C5 Bb4", "Bb4 C5 D5 Eb5 C5 Bb4", "G4 Ab4 G4 F4 F4 Eb4", "Eb5 Bb4 G4 Ab4 C5 Bb4", "Eb5 Bb4 G4 Ab4 C5 Bb4", "C5 Bb4 G4 Ab4 F4 G4", "G4 Ab4 G4 F4 F4 Eb4"]};
+hymnTune[1205]="Sinua, Jumala (Lagi)";OLDMEL[1205]={"c": 0, "src": "Old hymn 205 'Sua, suuri Jumala, nyt kansas tunnustaa' is a light revision of hymn 331 of the 1886 Finnish hymnal, 'Sinua, Jumala, me tunnustamme nyt; etehes tomuhun maailmat lankeevat. Kerubit, Serafit ja vallat taivahan...' (Te Deum paraphrase, 12 lines of 6 syllables) - https://koraali.fi/1886/331.html - whose melody is F308, composed for this hymn by Rudolf Lagi in 1866. It is NOT Grosser Gott (which is 7.8.7.8.7.7). First four phrases repeated (repeat sign), then four more = 12 lines. Not verified that the tune the English book credits to 'K. Ilmeri' is this same melody."};
+MEL["herr gott in seinem hochsten thron"]={"c": 0, "bpm": 140, "src": "HERR GOTT IN SEINEM HOECHSTEN THRON (1701 Finnish hymnal melody 62). https://koraali.fi/pdf/N062.pdf - koraali.fi (the site states all its content is public domain; MuseScore-engraved PDF of the chorale setting; soprano voice extracted programmatically from the PDF glyph positions and checked against the rendered page). Melody 1553, public domain. Notated in half notes (E minor); each phrase-final whole note has the following half rest folded in. Plain congregational (singing) form.", "l": ["B4/2 A4/2 G4/2 F#4/2 E4/2 G4/2 A4/2 B4/4", "B4/2 D5/2 B4/2 B4/2 G4/2 B4/2 A4/2 G4/4", "E4/2 G4/2 A4/2 B4/2 G4/2 F#4/4 E4/4", "B4/2 A4/2 G4/2 F#4/2 E4/2 G4/2 A4/2 B4/4", "B4/2 D5/2 B4/2 B4/2 G4/2 B4/2 A4/2 G4/4", "E4/2 G4/2 A4/2 B4/2 G4/2 F#4/4 E4/4", "E4/2 D#4/2 E4/2 G4/2 A4/2 G4/2 F#4/2 E4/4", "E4/2 D#4/2 E4/2 G4/2 A4/2 G4/2 F#4/2 E4/4", "E4/2 B4/2 G4/2 A4/2 B4/2 A4/4 G4/4", "B4/2 G4/2 A4/2 B4/2 G4/2 F#4/4 E4/4"]};
+hymnTune[1078]="Herr Gott In Seinem Höchsten Thron";OLDMEL[1078]={"c": 0, "src": "The text is stanza 12 of hymn 280 ('Mailman menon turhuudest') in the old Finnish hymnal of 1701 (https://koraali.fi/1701/280.html); the hymnal heads that hymn 'V.k. N:o 62', i.e. sung to melody 62, which koraali.fi gives as N062 = 'Herr Gott in seinem hoechsten Thron' (B. Waldis 1553). Metre 8.8.7.8.8.7.8.8.7.7; the first three phrases are repeated (repeat sign in the source). Whether the congregations used this exact chorale form or a folk variant is not verified."};
+MEL["auf meinen lieben gott 1701"]={"c": 0, "bpm": 140, "src": "AUF MEINEN LIEBEN GOTT / VENUS DU UND DEIN KIND (Regnart 1578; 1701 Finnish hymnal melody 106). https://koraali.fi/pdf/N106.pdf - koraali.fi (the site states all its content is public domain; MuseScore-engraved PDF of the chorale setting; soprano voice extracted programmatically from the PDF glyph positions and checked against the rendered page). Melody 1578, public domain. F minor, half-note pulse; rests folded into phrase-final notes. Plain congregational (singing) form.", "l": ["F4/2 F4/2 C5/2 C5/2 Bb4/2 C5/4", "C5/2 C5/2 Bb4/2 Ab4/2 Ab4/2 G4/4", "G4/2 Ab4/2 Bb4/2 C5/2 C5/2 Bb4/4 C5/4", "G4/2 Ab4/2 Bb4/2 C5/2 C5/2 Bb4/4 Ab4/4", "C5/2 Eb5/2 C5/2 C5/2 Ab4/2 Bb4/4 Bb4/4", "Bb4/2 C5/2 Bb4/2 Ab4/2 Ab4/2 G4/4 F4/4"]};
+hymnTune[1306]="Auf Meinen Lieben Gott (1701)";OLDMEL[1306]={"c": 0, "src": "The text is stanza 7 of hymn 274 'Pois makia mailma jaa' (H. Mueller) in the 1701 Finnish hymnal (https://koraali.fi/1701/274.html), headed 'V. k. N:o 106' = melody N106 on koraali.fi. Metre 6.6.7.7.7.7 matches the six phrases exactly. The same stanza survives as 1886 hymnal no. 392 v.7. Actual congregational usage not verified."};
+MEL["nouse mielen kay nyt kielen"]={"c": 0, "bpm": 88, "src": "NOUSE, MIELEN', KAY NYT KIELEN' (Faltin chorale book melody 141). https://koraali.fi/pdf/F141.pdf - koraali.fi (the site states all its content is public domain; MuseScore-engraved PDF of the chorale setting; soprano voice extracted programmatically from the PDF glyph positions and checked against the rendered page). Chorale book to the 1886 Finnish hymnal (hymns 57 and 188); public domain. Eb major, 2/4. Plain congregational (singing) form.", "l": ["Eb4 F4 G4 Eb4 G4 Ab4 Bb4 G4", "Ab4 Bb4 C5 Bb4 Bb4 A4 Bb4/2", "Eb5 D5 C5 Bb4 Ab4 G4 F4 F4", "G4 Ab4 Bb4 G4 F4 F4 Eb4/2"]};
+hymnTune[1067]="Nouse, Mielen', Käy Nyt Kielen'";OLDMEL[1067]={"c": 0, "src": "The song is no. 152 of 'Halullisten sielujen hengelliset laulut'. Ilmari Krohn's Suomen Kansan Savelmia (Hengelliset savelmat, p.162) prints a folk variant collected with this text ('Jopa loppuu paivan vaivan'', coll. M. Nyberg, Uusikirkko) and classes it as a variant of 'Faltin koraalikirja: 141' - JYX record http://jyx.jyu.fi/jyx/Record/jyx_123456789_28548 (GIF + MIDI of the folk variant; a second variant is record 28547). So the text was sung to (a variant of) chorale 141. Given here: the plain chorale, phrases 1-4 (the chorale repeats phrases 1-2 for 8.7.8.7.8.7 texts; the folk variant instead repeats lines 3-4)."};
+hymnTune[1072]=hymnTune[1078];OLDMEL[1072]={"c": 0, "src": "English translation of old hymn 78 'Vanhurskaat iloon kannetaan' (same hymn). The text is stanza 12 of hymn 280 ('Mailman menon turhuudest') in the old Finnish hymnal of 1701 (https://koraali.fi/1701/280.html); the hymnal heads that hymn 'V.k. N:o 62', i.e. sung to melody 62, which koraali.fi gives as N062 = 'Herr Gott in seinem hoechsten Thron' (B. Waldis 1553). Metre 8.8.7.8.8.7.8.8.7.7; the first three phrases are repeated (repeat sign in the source). Whether the congregations used this exact chorale form or a folk variant is not verified."};
+if(MEL[norm("Wir Danken Dir")]){hymnTune[1052]="Wir Danken Dir";OLDMEL[1052]={"c": 0, "src": "Old hymn 52 is another English translation of Christoph Fischer's 'Wir danken dir, Herr Jesu Christ, dass du fuer uns gestorben bist' (st.2 'We pray, true God and Man, to Thee' = 'Und bitten dich, wahr Mensch und Gott'; st.3 'Keep us from sin, from grief, and shame ... to bear our cross' = 'Behuet uns auch vor Suend und Schand ... dass wir im Kreuz geduldig sein') - the same hymn as old hymn 154 'We bless Thee, Jesus Christ our Lord' and hymn 18, which the app already sets to this tune. The tune for this particular translation is not confirmed from a printed pairing."}}
+if(MEL[norm("Eventide")]){hymnTune[1240]="Eventide";OLDMEL[1240]={"c": 0, "src": "Hymnary.org (https://hymnary.org/text/unchanging_god_hear_from_eternal_heaven) lists this 10.10.10.10 text with EVENTIDE in the Norwegian-American Lutheran hymnals Concordia (1916) no.195 and The Concordia Hymnal (1932) no.403. It is also The Lutheran Hymnary (1913) no.126, whose tune hymnary.org does not name; other books use ELLINGHAM or SHIPLAKE. A documented Lutheran pairing, not a confirmed one for this book."}}
+if(MEL[norm("Aurelia")]){hymnTune[1322]="Aurelia";OLDMEL[1322]={"c": 0, "src": "Old hymn 322 consists of the closing stanzas of S. J. Stone's 'O Thou before whose presence' (7.6.7.6 D; full text e.g. blueletterbible.org/hymns/o/O_Thou_Before_Whose_Presence.cfm). Hymnary.org (https://hymnary.org/text/o_thou_before_whose_presence) shows it with AURELIA in Concordia (1916) no.231, The Concordia Hymnal (1932) no.412, Gloria in Excelsis (1905) and Hymni Ecclesiae (1911); it is The Lutheran Hymnary (1913) no.283 (tune not named on hymnary.org). Other books use DAY OF REST, JESU MAGISTER BONE, WEBB, ST. GEORGE'S BOLTON - documented pairing, not confirmed for this book."}}
+RECS["31"]={"p": "Zz6hdkbIweQ", "s": "4T3zPoa_Hwk", "n": "Finnish congregation singing the same Te Deum hymn (modern Finnish virsi 321); baritone with organ is secondary.", "a": "Opistoseurat - Virsi VK 321: Sinua Jumala / Songs and Hymns of Zion SHZ 323: O God, as heaven sings (Heikki L)", "b": "Virsi 321 Sinua, Jumala (LAULUHUONE / Joose Vähäsöyrinki)"};
+RECS["1052"]={"p": "K0bE5U9vJCo", "s": "sUHZ4H9IAUE", "n": "German original of the same hymn (EG 79), plain church organ with the text shown; a second plain organ version is secondary.", "a": "Wir danken dir, Herr Jesu Christ (Neulußheimer Impressionen)", "b": "Wir danken Dir Herr Jesu Christ dass Du für uns gestorben bist EG 79 (detlefkorsen)"};
+RECS["1134"]={"p": "SU3RMOF0Ojo", "s": "yiV4CiRhXwQ", "n": "The same Veni Creator Spiritus hymn in its modern Finnish form (virsi 111), plain organ with the words; a small chorale choir is secondary.", "a": "Virsi 111, Oi Pyhä Henki, Herramme (OrganMusicOrgan)", "b": "Oi Pyhä Henki Herramme (Koraalikuoro Psallite - Topic)"};
+RECS["1149"]={"p": "wMFo3WFX7Ck", "n": "Finnish recording of exactly this hymn ('Ei Herran teitä käsittää'), traditional melody transcribed and arranged by Pasi Mustonen.", "a": "Laestadius-laulu (Pasi Mustonen)"};
+RECS["1150"]={"p": "wMFo3WFX7Ck", "n": "Finnish recording of exactly this hymn ('Ei Herran teitä käsittää'), traditional melody transcribed and arranged by Pasi Mustonen.", "a": "Laestadius-laulu (Pasi Mustonen)"};
+RECS["1226"]={"p": "A7pAfMn1UGs", "n": "German original of the same hymn (Mathesius, 'Herr Gott, der du mein Vater bist'), plain organ accompaniment with text for singing along.", "a": "Herr Gott, der du mein Vater bist EG 618 (Österreich) - Mitsingversion mit Orgelbegleitung und Text (dkbvi – Harmonika & Kirchenmusik)"};
+RECS["1334"]={"p": "v9XtFcUhraQ", "s": "9E4NpbhYwd8", "n": "Plain piano playing of the tune LOB SEI DEM ALLMÄCHTIGEN GOTT (Crüger); plain church organ of the same Crüger 1640 melody (German hymn EG 459) is secondary. Tune only, not the Finnish words.", "a": "Spirit of Mercy, Truth, and Love (Lob Sei Dem Allmachtigen Gott) (Andrew Remillard)", "b": "Die Sonn hoch an dem Himmel steht - EG 459 (detlefkorsen)"};
+RECS["1344"]={"p": "Y5MrzV7PITI", "s": "dpqiZqrxZ5k", "n": "German original of exactly this stanza, sung as a plain four-part chorale by a choir (Bach's closing chorale of cantata BWV 18, about 1 minute); a live small-ensemble performance is secondary.", "a": "Cantata, BWV 18: Ich bitt, o Herr, aus Herzensgrund (Monteverdi Choir - Topic)", "b": "BACH: Choral «Ich bitt, o Herr, aus Herzens Grund» BWV 18 | LIVE (Concerto 1700)"};
+RECS["1364"]={"p": "ES0MFuah-WE", "s": "5hFwikTsYs0", "n": "Plain piano playing of the tune CHRISTUS, DER IST MEIN LEBEN; a small choir singing Bach's simple chorale setting of the same tune (German words) is secondary. Tune only.", "a": "Christus, der ist mein Leben (Chorale No 6) Christ is my life (Andrew Remillard)", "b": "Bach - Chorale Christus, der ist mein Leben BWV 282 | Netherlands Bach Society (Netherlands Bach Society)"};
+RECS["1107"]={"p": "IhVWpk036cc", "n": "Plain four-voice unaccompanied singing of the Latin carol ‘Resonet in laudibus’ (the tune only, not the Finnish words).", "a": "Resonet In Laudibus - Medieval Christmas Carol (Choral Setting) (Neumes and Tunes)"};
+RECS["1358"]={"p": "F49Xl7_k-LM", "s": "oAGXmexQOng", "n": "Plain piano playing of the tune WAS MEIN GOTT WILL; the Laestadian Lutheran Church singing ‘The Will of God Is Always Best’ is secondary. Tune only, not the Finnish words.", "a": "The Will of God is Always Best  (Was mein Gott will) (Andrew Remillard)", "b": "The Will of God Is Always Best SHZ 357 (Laestadian Lutheran Church - Topic)"};
+Object.keys(XMH).forEach(function(k){const s=XMH[k].src;if(s&&RECS[s])RECS[k]=RECS[s]});
+/*V190DATA-END*/
 
 window.HBMelodyReview={CHORUS_ADDED,WORD_FOLLOW_OFF,melTextGap,hymnV1,MEL2,MELALT,XMH,MELODY_REVIEW,MELODY_REFS,MELODY_PRIORITY,MEL,RECS,HYMNS,OLDH,OLDMEL,hymnTune,hymnTitle,melHas,melCertain,norm,esc,stopMel,naturalBaseBpm,melFor,buildEvents,sylInfo};
 
@@ -6291,7 +6336,7 @@ function accessModeSet(on){
   if(S.accessMode){accessSay("Flip phone and blind mode on");toast("Flip phone / blind mode on")}
   else toast("Flip phone / blind mode off. Standard settings restored.")
 }
-function accessHymn(){if(PL&&PL.n)return PL.n;const p=PAGES[cur],h=p&&p.hy&&p.hy.length?p.hy[0]:0;return h||1}
+function accessHymn(){if(PL&&PL.n)return PL.n;const p=PAGES[cur];if(p&&p.o&&p.on)return 1000+p.on;if(p&&p.x&&p.xn)return 2000+p.xn;return p&&p.hy&&p.hy.length?p.hy[0]:1}
 function accessStart(){
   if(PL){pauseMel();return}
   const n=accessHymn(),r=melFor(n);closeAll();
@@ -6301,6 +6346,7 @@ function accessStart(){
   toast(r.why||"No melody is available");accessSay(r.why||"No melody is available")
 }
 function accessStepHymn(d){
+  if(accessHymn()>1000){accessStepPage(d);return}
   const n=Math.max(1,Math.min(HYMNS.length,accessHymn()+d));if(n===accessHymn()){const m=d<0?"That is the first hymn":"That is the last hymn";toast(m);accessSay(m);return}
   const was=!!PL;if(was)stopMel();goHymn(n);if(was)playMel(n,true);accessSay(`${hlab(n)}. ${hymnTitle(n)}`)
 }
@@ -6322,6 +6368,9 @@ function accessKey(e){
 $("#skipMel").onclick=()=>{if(S.accessMode)accessStart()};
 document.addEventListener("keydown",e=>{if(S.accessMode&&accessKey(e)){e.preventDefault();e.stopPropagation()}},true);
 
+/* v1.90: the page-position control works from the keyboard; unlabelled switches take their row title as their name */
+$("#pos").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();$("#pos").click()}});
+document.querySelectorAll(".srow .sw input:not([aria-label])").forEach(i=>{const r=i.closest(".srow"),sl=r&&r.querySelector(".sl");if(!sl)return;const t=[...sl.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(" ").trim();if(t)i.setAttribute("aria-label",t)});
 /* every link to the hosted website uses the one address in window.HB_SITE */
 function syncSite(root){const u=window.HB_SITE;if(!u)return;(root||document).querySelectorAll('a[href*="americanhymns.github.io"]').forEach(a=>{a.setAttribute("href",u);if(/^https?:\/\//.test(a.textContent.trim()))a.textContent=u})}
 syncSite();fsState();
@@ -6409,7 +6458,7 @@ function closeRev(){if(typeof d.close==='function'&&!d.classList.contains('fallb
 d.addEventListener('click',function(e){if(e.target!==d)return;closeRev()});
 document.addEventListener('keydown',function(e){if((e.key==='Escape'||e.key==='Esc')&&d.hasAttribute('open')){e.preventDefault();e.stopPropagation();closeRev()}},true);
 document.getElementById('closeMelReview').onclick=closeRev;
-const b=document.getElementById('openMelReview');if(b)b.onclick=function(){renderReview();stopMel(true);document.body.classList.add('ovOpen');if(typeof d.showModal==='function')d.showModal();else{var sc=document.createElement('div');sc.id='mrScrim';sc.style.cssText='position:fixed;inset:0;background:#000;z-index:59';document.body.appendChild(sc);d.setAttribute('open','');d.classList.add('fallback')}try{f.focus()}catch(e){}};
+const b=document.getElementById('openMelReview');if(b)b.onclick=function(){renderReview();stopMel();document.body.classList.add('ovOpen');if(typeof d.showModal==='function')d.showModal();else{var sc=document.createElement('div');sc.id='mrScrim';sc.style.cssText='position:fixed;inset:0;background:#000;z-index:59';document.body.appendChild(sc);d.setAttribute('open','');d.classList.add('fallback')}try{f.focus()}catch(e){}};
 document.addEventListener('play',e=>{if(e.target.tagName==='AUDIO'){stopMel();document.querySelectorAll('audio').forEach(a=>{if(a!==e.target)a.pause()})}},true);
 })();
 </script>
